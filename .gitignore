@@ -1,0 +1,4 @@
+*.tldr
+
+# vscode settings, tasks and launch configurations
+.vscode
