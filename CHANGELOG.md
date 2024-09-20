@@ -16,7 +16,7 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments
 
-## 0.1.1 -
+## 0.1.1 - 2024-09-20
 
 ### Added
 
