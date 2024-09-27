@@ -17,13 +17,9 @@
         "comment": {
             "patterns": [
                 {
-                    "name": "invalid.illegal.unopened_multiline_comment.kay",
-                    "match": "#\\}"
-                },
-                {
                     "name": "comment.block.kay",
-                    "begin": "#\\{",
-                    "end": "#\\}"
+                    "begin": "##",
+                    "end": "##"
                 },
                 {
                     "name": "comment.line.number-sign.kay",

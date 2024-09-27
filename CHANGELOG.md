@@ -16,6 +16,12 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments
 
+## 0.1.2 - 2024-09-27
+
+### Changed
+
+- Multiline comments are now enclosed by `##` and `##`
+
 ## 0.1.1 - 2024-09-20
 
 ### Added
