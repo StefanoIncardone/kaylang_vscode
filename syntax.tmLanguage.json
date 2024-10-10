@@ -10,7 +10,7 @@
         { "include": "#string_literal" },
         { "include": "#raw_string_literal" },
         { "include": "#integer_literal" },
-        { "include": "#variable" },
+        { "include": "#identifier" },
         { "include": "#type_annotation" }
     ],
     "repository": {
@@ -31,7 +31,7 @@
 
         "non_printable_ascii": {
             "name": "invalid.illegal.non_printable_ascii.kay",
-            "match": "[^\\x00-\\x7f]{1,4}"
+            "match": "[^\\x00-\\x7f]"
         },
 
         "keyword": {
@@ -190,7 +190,7 @@
             "patterns": [
                 {
                     "name": "constant.numeric.integer.binary.kay",
-                    "match": "(0(b))((?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4})+)",
+                    "match": "(0(b))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])+)",
                     "captures": {
                         "1": {
                             "name": "constant.numeric.integer.prefix.kay"
@@ -215,7 +215,7 @@
                 },
                 {
                     "name": "constant.numeric.integer.octal.kay",
-                    "match": "(0(o))((?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4})+)",
+                    "match": "(0(o))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])+)",
                     "captures": {
                         "1": {
                             "name": "constant.numeric.integer.prefix.kay"
@@ -240,7 +240,7 @@
                 },
                 {
                     "name": "constant.numeric.integer.hexadecimal.kay",
-                    "match": "(0(x))((?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4})+)",
+                    "match": "(0(x))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])+)",
                     "captures": {
                         "1": {
                             "name": "constant.numeric.integer.prefix.kay"
@@ -273,7 +273,7 @@
                 },
                 {
                     "name": "constant.numeric.integer.decimal.kay",
-                    "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4})*)",
+                    "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
                     "captures": {
                         "1": {
                             "patterns": [
@@ -289,20 +289,9 @@
             ]
         },
 
-        "long_identifier": {
-            "name": "invalid.illegal.long.kay",
-            "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4}){63,})",
-            "captures": {
-                "1": {
-                    "patterns": [
-                        { "include": "#non_printable_ascii" }
-                    ]
-                }
-            }
-        },
-        "variable_name": {
+        "identifier": {
             "name": "variable.name.kay",
-            "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4}){0,62})",
+            "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
             "captures": {
                 "1": {
                     "patterns": [
@@ -310,32 +299,15 @@
                     ]
                 }
             }
-        },
-        "type_name": {
-            "name": "support.type.kay",
-            "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4}){0,62})",
-            "captures": {
-                "1": {
-                    "patterns": [
-                        { "include": "#non_printable_ascii" }
-                    ]
-                }
-            }
-        },
-        "variable": {
-            "patterns": [
-                { "include": "#long_identifier" },
-                { "include": "#variable_name" }
-            ]
         },
         "type_annotation": {
             "name": "meta.type.annotation.kay",
-            "match": ": *?([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f]{1,4})*)(\\[.*?\\])?",
+            "match": ": *?([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)(\\[.*?\\])?",
             "captures": {
                 "1": {
+                    "name": "support.type.kay",
                     "patterns": [
-                        { "include": "#long_identifier" },
-                        { "include": "#type_name" }
+                        { "include": "#non_printable_ascii" }
                     ]
                 },
                 "2": {
@@ -347,7 +319,7 @@
                         { "include": "#string_literal" },
                         { "include": "#raw_string_literal" },
                         { "include": "#integer_literal" },
-                        { "include": "#variable" }
+                        { "include": "#identifier" }
                     ]
                 }
             }

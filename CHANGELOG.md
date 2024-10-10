@@ -16,6 +16,16 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments
 
+## 0.1.3 -
+
+### Removed
+
+- Removed highlighting of identifiers over the limit of 63 characters as errors
+
+### Changed
+
+- Simplified patterns
+
 ## 0.1.2 - 2024-09-27
 
 ### Changed
