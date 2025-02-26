@@ -12,7 +12,7 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 
 ## Known issues
 
-- Highlighting of emojis as errors
+- Highlighting of emojis as errors, especially in identifiers longer than 64 characters
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments
 
@@ -20,11 +20,13 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 
 ### Removed
 
-- Removed highlighting of identifiers over the limit of 63 characters as errors
+- Removed highlighting of identifiers over the limit of 64 characters as errors
 
 ### Changed
 
 - Simplified patterns
+- (kay 0.6.2) Empty binary/octal/hexadecimal numbers literals (`0b`, `0o`, `0x`) are no longer
+    considered syntax errors and now mean `0`
 
 ## 0.1.2 - 2024-09-27
 
