@@ -1,5 +1,13 @@
 {
  "name": "kay-lang",
+ "author": {
+  "name": "Stefano Incardone"
+ },
+ "license": "MIT",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/StefanoIncardone/kaylang_vscode"
+ },
  "displayName": "Kay Lang",
  "description": "Syntax highlighting for Kay Lang",
  "version": "0.1.2",
