@@ -7,27 +7,25 @@
   { "include": "#comment" },
   { "include": "#non_printable_ascii" },
   { "include": "#keyword" },
-  { "include": "#character_literal" },
-  { "include": "#string_literal" },
-  { "include": "#raw_string_literal" },
-  { "include": "#integer_literal" },
+  { "include": "#literal" },
   { "include": "#identifier" },
-  { "include": "#identifier_str" },
   { "include": "#type_annotation" }
  ],
  "repository": {
+  "comment.block": {
+   "name": "comment.block.kay",
+   "begin": "##",
+   "end": "##"
+  },
+  "comment.line": {
+   "name": "comment.line.number-sign.kay",
+   "begin": "#",
+   "end": "\\n"
+  },
   "comment": {
    "patterns": [
-    {
-     "name": "comment.block.kay",
-     "begin": "##",
-     "end": "##"
-    },
-    {
-     "name": "comment.line.number-sign.kay",
-     "begin": "#",
-     "end": "\\n"
-    }
+    { "include": "#comment.block" },
+    { "include": "#comment.line" }
    ]
   },
 
@@ -36,250 +34,287 @@
    "match": "[^\\x00-\\x7f]"
   },
 
+  "keyword.control_flow": {
+   "name": "keyword.control.kay",
+   "match": "\\b(?:do|if|else|loop|break|continue)\\b"
+  },
+  "keyword.len_operator": {
+   "name": "keyword.operator.new.kay",
+   "match": "\\b(?:len)\\b"
+  },
+  "keyword.storage_modifier": {
+   "name": "storage.modifier.kay",
+   "match": "\\b(?:let|var)\\b"
+  },
+  "keyword.booleans": {
+   "name": "constant.language.boolean.kay",
+   "match": "\\b(?:true|false)\\b"
+  },
+  "keyword.builtin_functions": {
+   "name": "support.function.kay",
+   "match": "\\b(?:print|println|eprint|eprintln)\\b"
+  },
   "keyword": {
    "patterns": [
-    {
-     "name": "keyword.control.kay",
-     "match": "\\b(?:do|if|else|loop|break|continue)\\b"
-    },
-    {
-     "name": "keyword.operator.new.kay",
-     "match": "\\b(?:len)\\b"
-    },
-    {
-     "name": "storage.modifier.kay",
-     "match": "\\b(?:let|var)\\b"
-    },
-    {
-     "name": "constant.language.boolean.kay",
-     "match": "\\b(?:true|false)\\b"
-    },
-    {
-     "name": "support.function.kay",
-     "match": "\\b(?:print|println|eprint|eprintln)\\b"
-    }
+    { "include": "#keyword.control_flow" },
+    { "include": "#keyword.len_operator" },
+    { "include": "#keyword.storage_modifier" },
+    { "include": "#keyword.booleans" },
+    { "include": "#keyword.builtin_functions" }
    ]
   },
 
+  "escapes.backslash": {
+   "name": "constant.character.escape.backslash.kay",
+   "match": "\\\\{2}"
+  },
+  "escapes.single_quote": {
+   "name": "constant.character.escape.single_quote.kay",
+   "match": "\\\\'"
+  },
+  "escapes.double_quote": {
+   "name": "constant.character.escape.double_quote.kay",
+   "match": "\\\\\""
+  },
+  "escapes.newline": {
+   "name": "constant.character.escape.newline.kay",
+   "match": "\\\\n"
+  },
+  "escapes.carriage_return": {
+   "name": "constant.character.escape.carriage_return.kay",
+   "match": "\\\\r"
+  },
+  "escapes.tab": {
+   "name": "constant.character.escape.tab.kay",
+   "match": "\\\\t"
+  },
+  "escapes.null": {
+   "name": "constant.character.escape.null.kay",
+   "match": "\\\\0"
+  },
+  "escapes.unrecognized": {
+   "name": "invalid.illegal.escape.kay",
+   "match": "\\\\."
+  },
   "escapes": {
    "patterns": [
-    {
-     "name": "constant.character.escape.kay",
-     "match": "(?:\\\\{2}|\\\\'|\\\\\"|\\\\n|\\\\r|\\\\t|\\\\0)"
-    },
-    {
-     "name": "invalid.illegal.escape.kay",
-     "match": "(?:\\\\.)"
-    }
-   ]
-  },
-  "raw_string_escapes": {
-   "patterns": [
-    {
-     "name": "constant.character.escape.kay",
-     "match": "(?:\\\\\")"
-    }
-   ]
-  },
-  "character_literal": {
-   "patterns": [
-    {
-     "name": "string.quoted.single.kay invalid.illegal.empty.kay",
-     "match": "''"
-    },
-    {
-     "name": "string.quoted.single.kay invalid.illegal.long.kay",
-     "match": "'((?:\\\\.|[^'\\\\]){2,})'",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "string.quoted.single.kay",
-     "match": "'((?:\\\\.|[^'\\\\]))'",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "string.quoted.single.kay invalid.illegal.unclosed.kay",
-     "match": "'((?:\\\\.|[^'\\\\])*)",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    }
-   ]
-  },
-  "string_literal": {
-   "patterns": [
-    {
-     "name": "string.quoted.double.kay",
-     "match": "\"((?:\\\\.|[^\"\\\\])*)\"",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "string.quoted.double.kay invalid.illegal.unclosed.kay",
-     "match": "\"((?:\\\\.|[^\"\\\\])*)",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    }
-   ]
-  },
-  "raw_string_literal": {
-   "patterns": [
-    {
-     "name": "string.quoted.double.raw.kay",
-     "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)\"",
-     "captures": {
-      "1": {
-       "name": "markup.changed.prefix.kay"
-      },
-      "2": {
-       "patterns": [
-        { "include": "#raw_string_escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "string.quoted.double.raw.kay invalid.illegal.unclosed.kay",
-     "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)",
-     "captures": {
-      "1": {
-       "name": "markup.changed.prefix.kay"
-      },
-      "2": {
-       "patterns": [
-        { "include": "#raw_string_escapes" },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    }
+    { "include": "#escapes.backslash" },
+    { "include": "#escapes.single_quote" },
+    { "include": "#escapes.double_quote" },
+    { "include": "#escapes.newline" },
+    { "include": "#escapes.carriage_return" },
+    { "include": "#escapes.tab" },
+    { "include": "#escapes.null" },
+    { "include": "#escapes.unrecognized" }
    ]
   },
 
-  "integer_literal": {
-   "patterns": [
-    {
-     "name": "constant.numeric.integer.binary.kay",
-     "match": "(0(b))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
-     "captures": {
-      "1": {
-       "name": "constant.numeric.integer.prefix.kay"
-      },
-      "2": {
-       "name": "constant.numeric.integer.base.kay markup.changed.kay"
-      },
-      "3": {
-       "patterns": [
-        {
-         "name": "invalid.illegal.digit.kay",
-         "match": "[2-9]"
-        },
-        {
-         "name": "invalid.illegal.letter.kay",
-         "match": "[A-Za-z]"
-        },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "constant.numeric.integer.octal.kay",
-     "match": "(0(o))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
-     "captures": {
-      "1": {
-       "name": "constant.numeric.integer.prefix.kay"
-      },
-      "2": {
-       "name": "constant.numeric.integer.base.kay markup.changed.kay"
-      },
-      "3": {
-       "patterns": [
-        {
-         "name": "invalid.illegal.digit.kay",
-         "match": "[8-9]"
-        },
-        {
-         "name": "invalid.illegal.letter.kay",
-         "match": "[A-Za-z]"
-        },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "constant.numeric.integer.hexadecimal.kay",
-     "match": "(0(x))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
-     "captures": {
-      "1": {
-       "name": "constant.numeric.integer.prefix.kay"
-      },
-      "2": {
-       "name": "constant.numeric.integer.base.kay markup.changed.kay"
-      },
-      "3": {
-       "patterns": [
-        {
-         "name": "invalid.illegal.digit.kay",
-         "match": "[G-Zg-z]"
-        },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "constant.numeric.integer.decimal.kay",
-     "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
-     "captures": {
-      "1": {
-       "patterns": [
-        {
-         "name": "invalid.illegal.letter.kay",
-         "match": "[A-Za-z]"
-        },
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
+  "literal.character.empty": {
+   "name": "string.quoted.single.kay invalid.illegal.empty.kay",
+   "match": "''"
+  },
+  "literal.character.long": {
+   "name": "string.quoted.single.kay invalid.illegal.long.kay",
+   "match": "'((?:\\\\.|[^'\\\\]){2,})'",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#escapes" },
+      { "include": "#non_printable_ascii" }
+     ]
     }
+   }
+  },
+  "literal.character.valid": {
+   "name": "string.quoted.single.kay",
+   "match": "'((?:\\\\.|[^'\\\\]))'",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#escapes" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.character.unclosed": {
+   "name": "string.quoted.single.kay invalid.illegal.unclosed.kay",
+   "match": "'((?:\\\\.|[^'\\\\])*)",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#escapes" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.character": {
+   "patterns": [
+    { "include": "#literal.character.empty" },
+    { "include": "#literal.character.long" },
+    { "include": "#literal.character.valid" },
+    { "include": "#literal.character.unclosed" }
    ]
   },
 
-  "identifier": {
+  "literal.string.valid": {
+   "name": "string.quoted.double.kay",
+   "match": "\"((?:\\\\.|[^\"\\\\])*)\"",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#escapes" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.string.unclosed": {
+   "name": "string.quoted.double.kay invalid.illegal.unclosed.kay",
+   "match": "\"((?:\\\\.|[^\"\\\\])*)",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#escapes" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.string": {
+   "patterns": [
+    { "include": "#literal.string.valid" },
+    { "include": "#literal.string.unclosed" }
+   ]
+  },
+
+  "literal.raw_string.valid": {
+   "name": "string.quoted.double.raw.kay",
+   "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)\"",
+   "captures": {
+    "1": { "name": "markup.changed.prefix.kay" },
+    "2": {
+     "patterns": [
+      { "include": "#escapes.double_quote" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.raw_string.unclosed": {
+   "name": "string.quoted.double.raw.kay invalid.illegal.unclosed.kay",
+   "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)",
+   "captures": {
+    "1": { "name": "markup.changed.prefix.kay" },
+    "2": {
+     "patterns": [
+      { "include": "#escapes.double_quote" },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.raw_string": {
+   "patterns": [
+    { "include": "#literal.raw_string.valid" },
+    { "include": "#literal.raw_string.unclosed" }
+   ]
+  },
+
+  "literal.integer.binary": {
+   "name": "constant.numeric.integer.binary.kay",
+   "match": "(0(b))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "captures": {
+    "1": { "name": "constant.numeric.integer.prefix.kay" },
+    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "3": {
+     "patterns": [
+      {
+       "name": "invalid.illegal.digit.kay",
+       "match": "[2-9]"
+      },
+      {
+       "name": "invalid.illegal.letter.kay",
+       "match": "[A-Za-z]"
+      },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.integer.octal": {
+   "name": "constant.numeric.integer.octal.kay",
+   "match": "(0(o))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "captures": {
+    "1": { "name": "constant.numeric.integer.prefix.kay" },
+    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "3": {
+     "patterns": [
+      {
+       "name": "invalid.illegal.digit.kay",
+       "match": "[8-9]"
+      },
+      {
+       "name": "invalid.illegal.letter.kay",
+       "match": "[A-Za-z]"
+      },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.integer.hexadecimal": {
+   "name": "constant.numeric.integer.hexadecimal.kay",
+   "match": "(0(x))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "captures": {
+    "1": { "name": "constant.numeric.integer.prefix.kay" },
+    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "3": {
+     "patterns": [
+      {
+       "name": "invalid.illegal.digit.kay",
+       "match": "[G-Zg-z]"
+      },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.integer.decimal": {
+   "name": "constant.numeric.integer.decimal.kay",
+   "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "captures": {
+    "1": {
+     "patterns": [
+      {
+       "name": "invalid.illegal.letter.kay",
+       "match": "[A-Za-z]"
+      },
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "literal.integer": {
+   "patterns": [
+    { "include": "#literal.integer.binary" },
+    { "include": "#literal.integer.octal" },
+    { "include": "#literal.integer.hexadecimal" },
+    { "include": "#literal.integer.decimal" }
+   ]
+  },
+
+  "literal": {
+   "patterns": [
+    { "include": "#literal.character" },
+    { "include": "#literal.string" },
+    { "include": "#literal.raw_string" },
+    { "include": "#literal.integer" }
+   ]
+  },
+
+  "identifier.regular": {
    "name": "variable.name.kay",
    "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
    "captures": {
@@ -290,32 +325,36 @@
     }
    }
   },
-  "identifier_str": {
-   "patterns": [
-    {
-     "name": "string.quoted.other.kay variable.name.kay",
-     "match": "`((?:[^`])*)`",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
-    },
-    {
-     "name": "string.quoted.other.kay variable.name.kay invalid.illegal.unclosed.kay",
-     "match": "`((?:[^`])*)",
-     "captures": {
-      "1": {
-       "patterns": [
-        { "include": "#non_printable_ascii" }
-       ]
-      }
-     }
+  "identifier.string": {
+   "name": "string.quoted.other.kay variable.name.kay",
+   "match": "`((?:[^`])*)`",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#non_printable_ascii" }
+     ]
     }
+   }
+  },
+  "identifier.string.unclosed": {
+   "name": "string.quoted.other.kay variable.name.kay invalid.illegal.unclosed.kay",
+   "match": "`((?:[^`])*)",
+   "captures": {
+    "1": {
+     "patterns": [
+      { "include": "#non_printable_ascii" }
+     ]
+    }
+   }
+  },
+  "identifier": {
+   "patterns": [
+    { "include": "#identifier.regular" },
+    { "include": "#identifier.string" },
+    { "include": "#identifier.string.unclosed" }
    ]
   },
+
   "type_annotation": {
    "name": "meta.type.annotation.kay",
    "match": ": *?([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)(\\[.*?\\])?",
@@ -331,10 +370,7 @@
       { "include": "#comment" },
       { "include": "#non_printable_ascii" },
       { "include": "#keyword" },
-      { "include": "#character_literal" },
-      { "include": "#string_literal" },
-      { "include": "#raw_string_literal" },
-      { "include": "#integer_literal" },
+      { "include": "#literal" },
       { "include": "#identifier" }
      ]
     }
