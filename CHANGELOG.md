@@ -9,7 +9,6 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ## Unreleased
 
 - Highlighting of operators and symbols
-- Autoclosing `r""`: `["r\"", "\""]`
 
 ## Known issues
 
@@ -22,6 +21,7 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ### Added
 
 - (kay 0.6.3) identifier strings: ``this is an identifier``
+- Autoclosing `r""`
 
 ## 0.1.3 - 2025-02-27
 
