@@ -22,6 +22,11 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 
 - (kay 0.6.3) identifier strings: ``this is an identifier``
 - Autoclosing `r""`
+- Autoclosing `##`
+
+### Changed
+
+- Improved auto closing pairs activation contexts
 
 ## 0.1.3 - 2025-02-27
 
