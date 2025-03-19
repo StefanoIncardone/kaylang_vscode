@@ -46,11 +46,7 @@
    "name": "storage.modifier.kay",
    "match": "\\b(?:let|var)\\b"
   },
-  "keyword.booleans": {
-   "name": "constant.language.boolean.kay",
-   "match": "\\b(?:true|false)\\b"
-  },
-  "keyword.builtin_functions": {
+  "keyword.builtin_function": {
    "name": "support.function.kay",
    "match": "\\b(?:print|println|eprint|eprintln)\\b"
   },
@@ -59,54 +55,58 @@
     { "include": "#keyword.control_flow" },
     { "include": "#keyword.len_operator" },
     { "include": "#keyword.storage_modifier" },
-    { "include": "#keyword.booleans" },
-    { "include": "#keyword.builtin_functions" }
+    { "include": "#keyword.builtin_function" }
    ]
   },
 
-  "escapes.backslash": {
+  "escape.backslash": {
    "name": "constant.character.escape.backslash.kay",
    "match": "\\\\{2}"
   },
-  "escapes.single_quote": {
+  "escape.single_quote": {
    "name": "constant.character.escape.single_quote.kay",
    "match": "\\\\'"
   },
-  "escapes.double_quote": {
+  "escape.double_quote": {
    "name": "constant.character.escape.double_quote.kay",
    "match": "\\\\\""
   },
-  "escapes.newline": {
+  "escape.newline": {
    "name": "constant.character.escape.newline.kay",
    "match": "\\\\n"
   },
-  "escapes.carriage_return": {
+  "escape.carriage_return": {
    "name": "constant.character.escape.carriage_return.kay",
    "match": "\\\\r"
   },
-  "escapes.tab": {
+  "escape.tab": {
    "name": "constant.character.escape.tab.kay",
    "match": "\\\\t"
   },
-  "escapes.null": {
+  "escape.null": {
    "name": "constant.character.escape.null.kay",
    "match": "\\\\0"
   },
-  "escapes.unrecognized": {
+  "escape.unrecognized": {
    "name": "invalid.illegal.escape.kay",
    "match": "\\\\."
   },
-  "escapes": {
+  "escape": {
    "patterns": [
-    { "include": "#escapes.backslash" },
-    { "include": "#escapes.single_quote" },
-    { "include": "#escapes.double_quote" },
-    { "include": "#escapes.newline" },
-    { "include": "#escapes.carriage_return" },
-    { "include": "#escapes.tab" },
-    { "include": "#escapes.null" },
-    { "include": "#escapes.unrecognized" }
+    { "include": "#escape.backslash" },
+    { "include": "#escape.single_quote" },
+    { "include": "#escape.double_quote" },
+    { "include": "#escape.newline" },
+    { "include": "#escape.carriage_return" },
+    { "include": "#escape.tab" },
+    { "include": "#escape.null" },
+    { "include": "#escape.unrecognized" }
    ]
+  },
+
+  "literal.boolean": {
+   "name": "constant.language.boolean.kay",
+   "match": "\\b(?:true|false)\\b"
   },
 
   "literal.character.empty": {
@@ -119,7 +119,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#escapes" },
+      { "include": "#escape" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -131,7 +131,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#escapes" },
+      { "include": "#escape" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -143,7 +143,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#escapes" },
+      { "include": "#escape" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -164,7 +164,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#escapes" },
+      { "include": "#escape" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -176,7 +176,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#escapes" },
+      { "include": "#escape" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -196,7 +196,7 @@
     "1": { "name": "markup.changed.prefix.kay" },
     "2": {
      "patterns": [
-      { "include": "#escapes.double_quote" },
+      { "include": "#escape.double_quote" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -209,7 +209,7 @@
     "1": { "name": "markup.changed.prefix.kay" },
     "2": {
      "patterns": [
-      { "include": "#escapes.double_quote" },
+      { "include": "#escape.double_quote" },
       { "include": "#non_printable_ascii" }
      ]
     }
@@ -307,6 +307,7 @@
 
   "literal": {
    "patterns": [
+    { "include": "#literal.boolean" },
     { "include": "#literal.character" },
     { "include": "#literal.string" },
     { "include": "#literal.raw_string" },

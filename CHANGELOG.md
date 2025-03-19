@@ -27,6 +27,7 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ### Changed
 
 - Improved auto closing pairs activation contexts
+- Boolean are now considered literals instead of keywords
 
 ## 0.1.3 - 2025-02-27
 
