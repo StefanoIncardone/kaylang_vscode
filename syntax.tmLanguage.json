@@ -12,6 +12,7 @@
   { "include": "#raw_string_literal" },
   { "include": "#integer_literal" },
   { "include": "#identifier" },
+  { "include": "#identifier_str" },
   { "include": "#type_annotation" }
  ],
  "repository": {
@@ -288,6 +289,32 @@
      ]
     }
    }
+  },
+  "identifier_str": {
+   "patterns": [
+    {
+     "name": "string.quoted.other.kay variable.name.kay",
+     "match": "`((?:[^`])*)`",
+     "captures": {
+      "1": {
+       "patterns": [
+        { "include": "#non_printable_ascii" }
+       ]
+      }
+     }
+    },
+    {
+     "name": "string.quoted.other.kay variable.name.kay invalid.illegal.unclosed.kay",
+     "match": "`((?:[^`])*)",
+     "captures": {
+      "1": {
+       "patterns": [
+        { "include": "#non_printable_ascii" }
+       ]
+      }
+     }
+    }
+   ]
   },
   "type_annotation": {
    "name": "meta.type.annotation.kay",

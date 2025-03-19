@@ -9,24 +9,31 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ## Unreleased
 
 - Highlighting of operators and symbols
+- Autoclosing `r""`: `["r\"", "\""]`
 
 ## Known issues
 
-- Highlighting of emojis as errors, especially in identifiers longer than 64 characters
+- Highlighting of emojis as errors, especially in identifiers longer than 63 characters
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments
 
+## 0.1.4 -
+
+### Added
+
+- (kay 0.6.3) identifier strings: ``this is an identifier``
+
 ## 0.1.3 - 2025-02-27
-
-### Removed
-
-- Removed highlighting of identifiers over the limit of 64 characters as errors
 
 ### Changed
 
 - Simplified patterns
 - (kay 0.6.2) Empty binary/octal/hexadecimal numbers literals (`0b`, `0o`, `0x`) are no longer
     considered syntax errors and now mean `0`
+
+### Removed
+
+- Removed highlighting of identifiers over the limit of 63 characters as errors
 
 ## 0.1.2 - 2024-09-27
 

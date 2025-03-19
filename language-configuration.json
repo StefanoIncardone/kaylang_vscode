@@ -1,7 +1,10 @@
+// TODO(stefano): split single line comments and multi line comments patterns
+// TODO(stefano): split keywords patterns
+// FIX(stefano): correct non_printable_ascii pattern to only go for 0x20 to 0x7f
 {
  "comments": {
   "lineComment": "#",
-  "blockComment": ["##", "##"]
+  "blockComment": ["##", "##"],
  },
  "brackets": [
   ["{", "}"],
@@ -13,13 +16,15 @@
   ["[", "]"],
   ["(", ")"],
   ["\"", "\""],
-  ["'", "'"]
+  ["'", "'"],
+  ["`", "`"],
  ],
  "surroundingPairs": [
   ["{", "}"],
   ["[", "]"],
   ["(", ")"],
   ["\"", "\""],
-  ["'", "'"]
+  ["'", "'"],
+  ["`", "`"],
  ],
 }
