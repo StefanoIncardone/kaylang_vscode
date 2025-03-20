@@ -6,6 +6,10 @@
  "patterns": [
   { "include": "#comment" },
   { "include": "#non_ascii" },
+  { "include": "#bracket" },
+  { "include": "#colon" },
+  { "include": "#semicolon" },
+  { "include": "#comma" },
   { "include": "#keyword" },
   { "include": "#literal" },
   { "include": "#identifier" }
@@ -33,13 +37,146 @@
    "match": "[^\\x00-\\x7f]"
   },
 
+  "bracket": {
+   "name": "entity.other.bracket.kay",
+   "match": "[(\\[{)\\]}]"
+  },
+  "colon": {
+   "name": "entity.other.colon.kay",
+   "match": ":"
+  },
+  "semicolon": {
+   "name": "entity.other.semicolon.kay",
+   "match": ";"
+  },
+  "comma": {
+   "name": "entity.other.comma.kay",
+   "match": ","
+  },
+
+  "keyword.operator.equals_equals": {
+   "name": "keyword.operator.equals_equals.kay",
+   "match": "=="
+  },
+  "keyword.operator.equals": {
+   "name": "keyword.operator.equals.kay",
+   "match": "="
+  },
+  "keyword.operator.not_equals": {
+   "name": "keyword.operator.not_equals.kay",
+   "match": "!="
+  },
+  "keyword.operator.not": {
+   "name": "keyword.operator.not.kay",
+   "match": "!"
+  },
+  "keyword.operator.len": {
+   "name": "keyword.operator.new.len.kay",
+   "match": "\\b(?:len)\\b"
+  },
+  "keyword.operator.pow": {
+   "name": "keyword.operator.pow.kay",
+   "match": "\\*\\*(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.times": {
+   "name": "keyword.operator.times.kay",
+   "match": "\\*(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.divide": {
+   "name": "keyword.operator.divide.kay",
+   "match": "/(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.remainder": {
+   "name": "keyword.operator.remainder.kay",
+   "match": "%=?"
+  },
+  "keyword.operator.plus": {
+   "name": "keyword.operator.plus.kay",
+   "match": "\\+(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.minus": {
+   "name": "keyword.operator.minus.kay",
+   "match": "-(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.left_rotate": {
+   "name": "keyword.operator.left_rotate.kay",
+   "match": "<<<=?"
+  },
+  "keyword.operator.right_rotate": {
+   "name": "keyword.operator.right_rotate.kay",
+   "match": ">>>=?"
+  },
+  "keyword.operator.left_shift": {
+   "name": "keyword.operator.left_shift.kay",
+   "match": "<<(?:\\\\|\\|)?=?"
+  },
+  "keyword.operator.right_shift": {
+   "name": "keyword.operator.right_shift.kay",
+   "match": ">>=?"
+  },
+  "keyword.operator.greater": {
+   "name": "keyword.operator.greater.kay",
+   "match": ">=?"
+  },
+  "keyword.operator.less": {
+   "name": "keyword.operator.less.kay",
+   "match": "<=?"
+  },
+  "keyword.operator.compare": {
+   "name": "keyword.operator.compare.kay",
+   "match": "<=>"
+  },
+  "keyword.operator.and": {
+   "name": "keyword.operator.and.kay",
+   "match": "&&=?"
+  },
+  "keyword.operator.or": {
+   "name": "keyword.operator.or.kay",
+   "match": "\\|\\|=?"
+  },
+  "keyword.operator.bit_and": {
+   "name": "keyword.operator.bit_and.kay",
+   "match": "&=?"
+  },
+  "keyword.operator.bit_or": {
+   "name": "keyword.operator.bit_or.kay",
+   "match": "\\|=?"
+  },
+  "keyword.operator.bit_xor": {
+   "name": "keyword.operator.bit_xor.kay",
+   "match": "\\^=?"
+  },
+  "keyword.operator": {
+   "patterns": [
+    { "include": "#keyword.operator.equals_equals" },
+    { "include": "#keyword.operator.equals" },
+    { "include": "#keyword.operator.not_equals" },
+    { "include": "#keyword.operator.not" },
+    { "include": "#keyword.operator.len" },
+    { "include": "#keyword.operator.pow" },
+    { "include": "#keyword.operator.times" },
+    { "include": "#keyword.operator.divide" },
+    { "include": "#keyword.operator.remainder" },
+    { "include": "#keyword.operator.plus" },
+    { "include": "#keyword.operator.minus" },
+    { "include": "#keyword.operator.left_rotate" },
+    { "include": "#keyword.operator.right_rotate" },
+    { "include": "#keyword.operator.left_shift" },
+    { "include": "#keyword.operator.right_shift" },
+    { "include": "#keyword.operator.greater" },
+    { "include": "#keyword.operator.less" },
+    { "include": "#keyword.operator.compare" },
+    { "include": "#keyword.operator.and" },
+    { "include": "#keyword.operator.or" },
+    { "include": "#keyword.operator.bit_and" },
+    { "include": "#keyword.operator.bit_or" },
+    { "include": "#keyword.operator.bit_xor" }
+   ]
+  },
+
   "keyword.control_flow": {
    "name": "keyword.control.kay",
    "match": "\\b(?:do|if|else|loop|break|continue)\\b"
-  },
-  "keyword.len_operator": {
-   "name": "keyword.operator.new.kay",
-   "match": "\\b(?:len)\\b"
   },
   "keyword.storage_modifier": {
    "name": "storage.modifier.kay",
@@ -51,8 +188,8 @@
   },
   "keyword": {
    "patterns": [
+    { "include": "#keyword.operator" },
     { "include": "#keyword.control_flow" },
-    { "include": "#keyword.len_operator" },
     { "include": "#keyword.storage_modifier" },
     { "include": "#keyword.builtin_function" }
    ]
