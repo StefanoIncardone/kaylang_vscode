@@ -5,7 +5,7 @@
  "fileTypes": [".kay"],
  "patterns": [
   { "include": "#comment" },
-  { "include": "#non_printable_ascii" },
+  { "include": "#non_ascii" },
   { "include": "#keyword" },
   { "include": "#literal" },
   { "include": "#identifier" },
@@ -29,8 +29,8 @@
    ]
   },
 
-  "non_printable_ascii": {
-   "name": "invalid.illegal.non_printable_ascii.kay",
+  "non_ascii": {
+   "name": "invalid.illegal.non_ascii.kay",
    "match": "[^\\x00-\\x7f]"
   },
 
@@ -120,7 +120,7 @@
     "1": {
      "patterns": [
       { "include": "#escape" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -132,7 +132,7 @@
     "1": {
      "patterns": [
       { "include": "#escape" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -144,7 +144,7 @@
     "1": {
      "patterns": [
       { "include": "#escape" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -165,7 +165,7 @@
     "1": {
      "patterns": [
       { "include": "#escape" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -177,7 +177,7 @@
     "1": {
      "patterns": [
       { "include": "#escape" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -197,7 +197,7 @@
     "2": {
      "patterns": [
       { "include": "#escape.double_quote" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -210,7 +210,7 @@
     "2": {
      "patterns": [
       { "include": "#escape.double_quote" },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -238,7 +238,7 @@
        "name": "invalid.illegal.letter.kay",
        "match": "[A-Za-z]"
       },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -259,7 +259,7 @@
        "name": "invalid.illegal.letter.kay",
        "match": "[A-Za-z]"
       },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -276,7 +276,7 @@
        "name": "invalid.illegal.digit.kay",
        "match": "[G-Zg-z]"
       },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -291,7 +291,7 @@
        "name": "invalid.illegal.letter.kay",
        "match": "[A-Za-z]"
       },
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -321,7 +321,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -332,7 +332,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -343,7 +343,7 @@
    "captures": {
     "1": {
      "patterns": [
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     }
    }
@@ -363,13 +363,13 @@
     "1": {
      "name": "support.type.kay",
      "patterns": [
-      { "include": "#non_printable_ascii" }
+      { "include": "#non_ascii" }
      ]
     },
     "2": {
      "patterns": [
       { "include": "#comment" },
-      { "include": "#non_printable_ascii" },
+      { "include": "#non_ascii" },
       { "include": "#keyword" },
       { "include": "#literal" },
       { "include": "#identifier" }
