@@ -276,7 +276,7 @@
   },
   "literal.character.unclosed": {
    "name": "string.quoted.single.kay invalid.illegal.unclosed.kay",
-   "match": "'((?:\\\\.|[^'\\\\])*)",
+   "match": "'((?:\\\\.?|[^'\\\\])*)",
    "captures": {
     "1": {
      "patterns": [
@@ -309,7 +309,7 @@
   },
   "literal.string.unclosed": {
    "name": "string.quoted.double.kay invalid.illegal.unclosed.kay",
-   "match": "\"((?:\\\\.|[^\"\\\\])*)",
+   "match": "\"((?:\\\\.?|[^\"\\\\])*)",
    "captures": {
     "1": {
      "patterns": [
