@@ -22,6 +22,7 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - Autoclosing `r""`
 - Autoclosing `## ##`
 - Highlighting of operators and symbols
+- Highlighting of unrecognized characters
 
 ### Changed
 

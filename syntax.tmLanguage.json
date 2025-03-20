@@ -12,7 +12,8 @@
   { "include": "#comma" },
   { "include": "#keyword" },
   { "include": "#literal" },
-  { "include": "#identifier" }
+  { "include": "#identifier" },
+  { "include": "#unrecognized" }
  ],
  "repository": {
   "comment.block": {
@@ -495,6 +496,11 @@
     { "include": "#identifier.string" },
     { "include": "#identifier.string.unclosed" }
    ]
+  },
+
+  "unrecognized": {
+   "name": "invalid.illegal.unrecognized.kay",
+   "match": "."
   }
  }
 }
