@@ -4,8 +4,8 @@
  "scopeName": "source.kay",
  "fileTypes": [".kay"],
  "patterns": [
-  { "include": "#comment" },
   { "include": "#non_ascii" },
+  { "include": "#comment" },
   { "include": "#bracket" },
   { "include": "#colon" },
   { "include": "#semicolon" },
@@ -16,6 +16,11 @@
   { "include": "#unrecognized" }
  ],
  "repository": {
+  "non_ascii": {
+   "name": "invalid.illegal.non_ascii.kay",
+   "match": "[^\\x00-\\x7f]"
+  },
+
   "comment.block": {
    "name": "comment.block.kay",
    "begin": "##",
@@ -31,11 +36,6 @@
     { "include": "#comment.block" },
     { "include": "#comment.line" }
    ]
-  },
-
-  "non_ascii": {
-   "name": "invalid.illegal.non_ascii.kay",
-   "match": "[^\\x00-\\x7f]"
   },
 
   "bracket": {
