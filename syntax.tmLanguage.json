@@ -8,8 +8,7 @@
   { "include": "#non_ascii" },
   { "include": "#keyword" },
   { "include": "#literal" },
-  { "include": "#identifier" },
-  { "include": "#type_annotation" }
+  { "include": "#identifier" }
  ],
  "repository": {
   "comment.block": {
@@ -315,6 +314,10 @@
    ]
   },
 
+  "identifier.builtin_type": {
+   "name": "entity.name.type",
+   "match": "\\b(?:i64|ascii|bool|str)\\b"
+  },
   "identifier.regular": {
    "name": "variable.name.kay",
    "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
@@ -350,32 +353,11 @@
   },
   "identifier": {
    "patterns": [
+    { "include": "#identifier.builtin_type" },
     { "include": "#identifier.regular" },
     { "include": "#identifier.string" },
     { "include": "#identifier.string.unclosed" }
    ]
-  },
-
-  "type_annotation": {
-   "name": "meta.type.annotation.kay",
-   "match": ": *?([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)(\\[.*?\\])?",
-   "captures": {
-    "1": {
-     "name": "support.type.kay",
-     "patterns": [
-      { "include": "#non_ascii" }
-     ]
-    },
-    "2": {
-     "patterns": [
-      { "include": "#comment" },
-      { "include": "#non_ascii" },
-      { "include": "#keyword" },
-      { "include": "#literal" },
-      { "include": "#identifier" }
-     ]
-    }
-   }
   }
  }
 }

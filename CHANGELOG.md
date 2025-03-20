@@ -29,6 +29,10 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - Improved auto closing pairs activation contexts
 - Boolean are now considered literals instead of keywords
 
+### Removed
+
+- Removed highlighting of type annotation, made builtin types special identifiers
+
 ## 0.1.3 - 2025-02-27
 
 ### Changed
