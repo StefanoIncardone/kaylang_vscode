@@ -1,10 +1,9 @@
 {
  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
  "name": "Kay",
- "scopeName": "source.kay",
  "fileTypes": [".kay"],
+ "scopeName": "source.kay",
  "patterns": [
-  { "include": "#non_ascii" },
   { "include": "#comment" },
   { "include": "#bracket" },
   { "include": "#colon" },
@@ -13,9 +12,14 @@
   { "include": "#keyword" },
   { "include": "#literal" },
   { "include": "#identifier" },
+  { "include": "#non_ascii" },
   { "include": "#unrecognized" }
  ],
  "repository": {
+  "unrecognized": {
+   "name": "invalid.illegal.unrecognized.kay",
+   "match": "."
+  },
   "non_ascii": {
    "name": "invalid.illegal.non_ascii.kay",
    "match": "[^\\x00-\\x7f]"
@@ -496,11 +500,6 @@
     { "include": "#identifier.string" },
     { "include": "#identifier.string.unclosed" }
    ]
-  },
-
-  "unrecognized": {
-   "name": "invalid.illegal.unrecognized.kay",
-   "match": "."
   }
  }
 }
