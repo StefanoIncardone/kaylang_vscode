@@ -27,8 +27,11 @@
 
   "comment.block": {
    "name": "comment.block.kay",
-   "begin": "##",
-   "end": "##"
+   "begin": "#\\*",
+   "end": "\\*#",
+   "patterns": [
+    { "include": "#comment.block" }
+   ]
   },
   "comment.line": {
    "name": "comment.line.number-sign.kay",

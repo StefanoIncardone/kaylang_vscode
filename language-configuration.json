@@ -1,7 +1,7 @@
 {
  "comments": {
   "lineComment": "#",
-  "blockComment": ["##", "##"],
+  "blockComment": ["#*", "*#"],
  },
  "brackets": [
   ["{", "}"],
@@ -9,7 +9,7 @@
   ["(", ")"]
  ],
  "autoClosingPairs": [
-  { "open": "##",  "close": " ##", "notIn": ["string"] },
+  { "open": "#*",  "close": " *#", "notIn": ["string"] },
   { "open": "{",   "close": "}",   "notIn": ["string"] },
   { "open": "[",   "close": "]",   "notIn": ["string"] },
   { "open": "(",   "close": ")",   "notIn": ["string"] },
