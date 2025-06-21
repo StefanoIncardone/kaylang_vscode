@@ -10,7 +10,7 @@
  },
  "displayName": "Kay Lang",
  "description": "Syntax highlighting for Kay Lang",
- "version": "0.1.3",
+ "version": "0.1.4",
  "engines": {
   "vscode": "^1.91.0"
  },
