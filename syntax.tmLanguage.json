@@ -425,6 +425,23 @@
     }
    }
   },
+  "literal.integer.decimal_prefix": {
+   "name": "constant.numeric.integer.decimal_prefix.kay",
+   "match": "(0(d))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "captures": {
+    "1": { "name": "constant.numeric.integer.prefix.kay" },
+    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "3": {
+     "patterns": [
+      {
+       "name": "invalid.illegal.letter.kay",
+       "match": "[A-Za-z]"
+      },
+      { "include": "#non_ascii" }
+     ]
+    }
+   }
+  },
   "literal.integer.decimal": {
    "name": "constant.numeric.integer.decimal.kay",
    "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
@@ -445,6 +462,7 @@
     { "include": "#literal.integer.binary" },
     { "include": "#literal.integer.octal" },
     { "include": "#literal.integer.hexadecimal" },
+    { "include": "#literal.integer.decimal_prefix" },
     { "include": "#literal.integer.decimal" }
    ]
   },
