@@ -12,10 +12,15 @@
   { "include": "#keyword" },
   { "include": "#literal" },
   { "include": "#identifier" },
+  { "include": "#whitespace" },
   { "include": "#non_ascii" },
   { "include": "#unrecognized" }
  ],
  "repository": {
+  "whitespace": {
+   "name": "entity.other.whitespace.kay",
+   "match": "[ \\t\\n\\r\\f\\v]"
+  },
   "unrecognized": {
    "name": "invalid.illegal.unrecognized.kay",
    "match": "."
@@ -45,10 +50,41 @@
    ]
   },
 
-  "bracket": {
-   "name": "entity.other.bracket.kay",
-   "match": "[(\\[{)\\]}]"
+  "bracket.open_round": {
+   "name": "entity.other.bracket.open_round.kay",
+   "match": "\\("
   },
+  "bracket.close_round": {
+   "name": "entity.other.bracket.close_round.kay",
+   "match": "\\)"
+  },
+  "bracket.open_square": {
+   "name": "entity.other.bracket.open_square.kay",
+   "match": "\\["
+  },
+  "bracket.close_square": {
+   "name": "entity.other.bracket.close_square.kay",
+   "match": "]"
+  },
+  "bracket.open_curly": {
+   "name": "entity.other.bracket.open_curly.kay",
+   "match": "{"
+  },
+  "bracket.close_curly": {
+   "name": "entity.other.bracket.close_curly.kay",
+   "match": "}"
+  },
+  "bracket": {
+   "patterns": [
+    { "include": "#bracket.open_round" },
+    { "include": "#bracket.close_round" },
+    { "include": "#bracket.open_square" },
+    { "include": "#bracket.close_square" },
+    { "include": "#bracket.open_curly" },
+    { "include": "#bracket.close_curly" }
+   ]
+  },
+
   "colon": {
    "name": "entity.other.colon.kay",
    "match": ":"
@@ -62,6 +98,10 @@
    "match": ","
   },
 
+  "keyword.operator.not_equals_equals": {
+   "name": "keyword.operator.not_equals_equals.kay",
+   "match": "!=="
+  },
   "keyword.operator.equals_equals": {
    "name": "keyword.operator.equals_equals.kay",
    "match": "=="
@@ -82,117 +122,386 @@
    "name": "keyword.operator.new.len.kay",
    "match": "\\b(?:len)\\b"
   },
+  "keyword.operator.wrapping_pow_equals": {
+   "name": "keyword.operator.wrapping_pow_equals.kay",
+   "match": "\\*\\*\\\\="
+  },
+  "keyword.operator.saturating_pow_equals": {
+   "name": "keyword.operator.staturating_pow_equals.kay",
+   "match": "\\*\\*\\|="
+  },
+  "keyword.operator.pow_equals": {
+   "name": "keyword.operator.pow_equals.kay",
+   "match": "\\*\\*="
+  },
+  "keyword.operator.wrapping_pow": {
+   "name": "keyword.operator.wrapping_pow.kay",
+   "match": "\\*\\*\\\\"
+  },
+  "keyword.operator.saturating_pow": {
+   "name": "keyword.operator.staturating_pow.kay",
+   "match": "\\*\\*\\|"
+  },
   "keyword.operator.pow": {
    "name": "keyword.operator.pow.kay",
-   "match": "\\*\\*(?:\\\\|\\|)?=?"
+   "match": "\\*\\*"
+  },
+
+  "keyword.operator.wrapping_times_equals": {
+   "name": "keyword.operator.wrapping_times_equals.kay",
+   "match": "\\*\\\\="
+  },
+  "keyword.operator.saturating_times_equals": {
+   "name": "keyword.operator.staturating_times_equals.kay",
+   "match": "\\*\\|="
+  },
+  "keyword.operator.times_equals": {
+   "name": "keyword.operator.times_equals.kay",
+   "match": "\\*="
+  },
+  "keyword.operator.wrapping_times": {
+   "name": "keyword.operator.wrapping_times.kay",
+   "match": "\\*\\\\"
+  },
+  "keyword.operator.saturating_times": {
+   "name": "keyword.operator.staturating_times.kay",
+   "match": "\\*\\|"
   },
   "keyword.operator.times": {
    "name": "keyword.operator.times.kay",
-   "match": "\\*(?:\\\\|\\|)?=?"
+   "match": "\\*"
+  },
+  "keyword.operator.wrapping_divide_equals": {
+   "name": "keyword.operator.wrapping_divide_equals.kay",
+   "match": "/\\\\="
+  },
+  "keyword.operator.saturating_divide_equals": {
+   "name": "keyword.operator.staturating_divide_equals.kay",
+   "match": "/\\|="
+  },
+  "keyword.operator.divide_equals": {
+   "name": "keyword.operator.divide_equals.kay",
+   "match": "/="
+  },
+  "keyword.operator.wrapping_divide": {
+   "name": "keyword.operator.wrapping_divide.kay",
+   "match": "/\\\\"
+  },
+  "keyword.operator.saturating_divide": {
+   "name": "keyword.operator.staturating_divide.kay",
+   "match": "/\\|"
   },
   "keyword.operator.divide": {
    "name": "keyword.operator.divide.kay",
-   "match": "/(?:\\\\|\\|)?=?"
+   "match": "/"
+  },
+  "keyword.operator.remainder_equals": {
+   "name": "keyword.operator.remainder_equals.kay",
+   "match": "%="
   },
   "keyword.operator.remainder": {
    "name": "keyword.operator.remainder.kay",
-   "match": "%=?"
+   "match": "%"
+  },
+  "keyword.operator.wrapping_plus_equals": {
+   "name": "keyword.operator.wrapping_plus_equals.kay",
+   "match": "\\+\\\\="
+  },
+  "keyword.operator.saturating_plus_equals": {
+   "name": "keyword.operator.staturating_plus_equals.kay",
+   "match": "\\+\\|="
+  },
+  "keyword.operator.plus_equals": {
+   "name": "keyword.operator.plus_equals.kay",
+   "match": "\\+="
+  },
+  "keyword.operator.wrapping_plus": {
+   "name": "keyword.operator.wrapping_plus.kay",
+   "match": "\\+\\\\"
+  },
+  "keyword.operator.saturating_plus": {
+   "name": "keyword.operator.staturating_plus.kay",
+   "match": "\\+\\|"
   },
   "keyword.operator.plus": {
    "name": "keyword.operator.plus.kay",
-   "match": "\\+(?:\\\\|\\|)?=?"
+   "match": "\\+"
+  },
+  "keyword.operator.wrapping_minus_equals": {
+   "name": "keyword.operator.wrapping_minus_equals.kay",
+   "match": "-\\\\="
+  },
+  "keyword.operator.saturating_minus_equals": {
+   "name": "keyword.operator.staturating_minus_equals.kay",
+   "match": "-\\|="
+  },
+  "keyword.operator.minus_equals": {
+   "name": "keyword.operator.minus_equals.kay",
+   "match": "-="
+  },
+  "keyword.operator.wrapping_minus": {
+   "name": "keyword.operator.wrapping_minus.kay",
+   "match": "-\\\\"
+  },
+  "keyword.operator.saturating_minus": {
+   "name": "keyword.operator.staturating_minus.kay",
+   "match": "-\\|"
   },
   "keyword.operator.minus": {
    "name": "keyword.operator.minus.kay",
-   "match": "-(?:\\\\|\\|)?=?"
+   "match": "-"
+  },
+  "keyword.operator.left_rotate_equals": {
+   "name": "keyword.operator.left_rotate_equals.kay",
+   "match": "<<<="
   },
   "keyword.operator.left_rotate": {
    "name": "keyword.operator.left_rotate.kay",
-   "match": "<<<=?"
+   "match": "<<<"
+  },
+  "keyword.operator.right_rotate_equals": {
+   "name": "keyword.operator.right_rotate_equals.kay",
+   "match": ">>>="
   },
   "keyword.operator.right_rotate": {
    "name": "keyword.operator.right_rotate.kay",
-   "match": ">>>=?"
+   "match": ">>>"
+  },
+  "keyword.operator.wrapping_left_shift_equals": {
+   "name": "keyword.operator.wrapping_left_shift_equals.kay",
+   "match": "<<\\\\="
+  },
+  "keyword.operator.saturating_left_shift_equals": {
+   "name": "keyword.operator.staturating_left_shift_equals.kay",
+   "match": "<<\\|="
+  },
+  "keyword.operator.left_shift_equals": {
+   "name": "keyword.operator.left_shift_equals.kay",
+   "match": "<<="
+  },
+  "keyword.operator.wrapping_left_shift": {
+   "name": "keyword.operator.wrapping_left_shift.kay",
+   "match": "<<\\\\"
+  },
+  "keyword.operator.saturating_left_shift": {
+   "name": "keyword.operator.staturating_left_shift.kay",
+   "match": "<<\\|"
   },
   "keyword.operator.left_shift": {
    "name": "keyword.operator.left_shift.kay",
-   "match": "<<(?:\\\\|\\|)?=?"
+   "match": "<<"
+  },
+  "keyword.operator.right_shift_equals": {
+   "name": "keyword.operator.right_shift_equals.kay",
+   "match": ">>="
   },
   "keyword.operator.right_shift": {
    "name": "keyword.operator.right_shift.kay",
-   "match": ">>=?"
+   "match": ">>"
   },
-  "keyword.operator.greater": {
-   "name": "keyword.operator.greater.kay",
-   "match": ">=?"
+  "keyword.operator.and_equals": {
+   "name": "keyword.operator.and_equals.kay",
+   "match": "&&="
   },
-  "keyword.operator.less": {
-   "name": "keyword.operator.less.kay",
-   "match": "<=?"
+  "keyword.operator.and": {
+   "name": "keyword.operator.and.kay",
+   "match": "&&"
+  },
+  "keyword.operator.or_equals": {
+   "name": "keyword.operator.or_equals.kay",
+   "match": "\\|\\|="
+  },
+  "keyword.operator.or": {
+   "name": "keyword.operator.or.kay",
+   "match": "\\|\\|"
+  },
+  "keyword.operator.bit_and_equals": {
+   "name": "keyword.operator.bit_and_equals.kay",
+   "match": "&="
+  },
+  "keyword.operator.bit_and": {
+   "name": "keyword.operator.bit_and.kay",
+   "match": "&"
+  },
+  "keyword.operator.bit_xor_equals": {
+   "name": "keyword.operator.bit_xor_equals.kay",
+   "match": "\\^="
+  },
+  "keyword.operator.bit_xor": {
+   "name": "keyword.operator.bit_xor.kay",
+   "match": "\\^"
+  },
+  "keyword.operator.bit_or_equals": {
+   "name": "keyword.operator.bit_or_equals.kay",
+   "match": "\\|="
+  },
+  "keyword.operator.bit_or": {
+   "name": "keyword.operator.bit_or.kay",
+   "match": "\\|"
   },
   "keyword.operator.compare": {
    "name": "keyword.operator.compare.kay",
    "match": "<=>"
   },
-  "keyword.operator.and": {
-   "name": "keyword.operator.and.kay",
-   "match": "&&=?"
+  "keyword.operator.greater_or_equals": {
+   "name": "keyword.operator.greater_or_equals.kay",
+   "match": ">="
   },
-  "keyword.operator.or": {
-   "name": "keyword.operator.or.kay",
-   "match": "\\|\\|=?"
+  "keyword.operator.greater": {
+   "name": "keyword.operator.greater.kay",
+   "match": ">"
   },
-  "keyword.operator.bit_and": {
-   "name": "keyword.operator.bit_and.kay",
-   "match": "&=?"
+  "keyword.operator.less_or_equals": {
+   "name": "keyword.operator.less_or_equals.kay",
+   "match": "<="
   },
-  "keyword.operator.bit_or": {
-   "name": "keyword.operator.bit_or.kay",
-   "match": "\\|=?"
-  },
-  "keyword.operator.bit_xor": {
-   "name": "keyword.operator.bit_xor.kay",
-   "match": "\\^=?"
+  "keyword.operator.less": {
+   "name": "keyword.operator.less.kay",
+   "match": "<"
   },
   "keyword.operator": {
    "patterns": [
+    { "include": "#keyword.operator.not_equals_equals" },
     { "include": "#keyword.operator.equals_equals" },
     { "include": "#keyword.operator.equals" },
     { "include": "#keyword.operator.not_equals" },
     { "include": "#keyword.operator.not" },
     { "include": "#keyword.operator.len" },
+    { "include": "#keyword.operator.wrapping_pow_equals" },
+    { "include": "#keyword.operator.saturating_pow_equals" },
+    { "include": "#keyword.operator.pow_equals" },
+    { "include": "#keyword.operator.wrapping_pow" },
+    { "include": "#keyword.operator.saturating_pow" },
     { "include": "#keyword.operator.pow" },
+    { "include": "#keyword.operator.wrapping_times_equals" },
+    { "include": "#keyword.operator.saturating_times_equals" },
+    { "include": "#keyword.operator.times_equals" },
+    { "include": "#keyword.operator.wrapping_times" },
+    { "include": "#keyword.operator.saturating_times" },
     { "include": "#keyword.operator.times" },
+    { "include": "#keyword.operator.wrapping_divide_equals" },
+    { "include": "#keyword.operator.saturating_divide_equals" },
+    { "include": "#keyword.operator.divide_equals" },
+    { "include": "#keyword.operator.wrapping_divide" },
+    { "include": "#keyword.operator.saturating_divide" },
     { "include": "#keyword.operator.divide" },
+    { "include": "#keyword.operator.remainder_equals" },
     { "include": "#keyword.operator.remainder" },
+    { "include": "#keyword.operator.wrapping_plus_equals" },
+    { "include": "#keyword.operator.saturating_plus_equals" },
+    { "include": "#keyword.operator.plus_equals" },
+    { "include": "#keyword.operator.wrapping_plus" },
+    { "include": "#keyword.operator.saturating_plus" },
     { "include": "#keyword.operator.plus" },
+    { "include": "#keyword.operator.wrapping_minus_equals" },
+    { "include": "#keyword.operator.saturating_minus_equals" },
+    { "include": "#keyword.operator.minus_equals" },
+    { "include": "#keyword.operator.wrapping_minus" },
+    { "include": "#keyword.operator.saturating_minus" },
     { "include": "#keyword.operator.minus" },
+    { "include": "#keyword.operator.left_rotate_equals" },
     { "include": "#keyword.operator.left_rotate" },
+    { "include": "#keyword.operator.right_rotate_equals" },
     { "include": "#keyword.operator.right_rotate" },
+    { "include": "#keyword.operator.wrapping_left_shift_equals" },
+    { "include": "#keyword.operator.saturating_left_shift_equals" },
+    { "include": "#keyword.operator.left_shift_equals" },
+    { "include": "#keyword.operator.wrapping_left_shift" },
+    { "include": "#keyword.operator.saturating_left_shift" },
     { "include": "#keyword.operator.left_shift" },
+    { "include": "#keyword.operator.right_shift_equals" },
     { "include": "#keyword.operator.right_shift" },
-    { "include": "#keyword.operator.greater" },
-    { "include": "#keyword.operator.less" },
-    { "include": "#keyword.operator.compare" },
+    { "include": "#keyword.operator.and_equals" },
     { "include": "#keyword.operator.and" },
+    { "include": "#keyword.operator.or_equals" },
     { "include": "#keyword.operator.or" },
+    { "include": "#keyword.operator.bit_and_equals" },
     { "include": "#keyword.operator.bit_and" },
+    { "include": "#keyword.operator.bit_xor_equals" },
+    { "include": "#keyword.operator.bit_xor" },
+    { "include": "#keyword.operator.bit_or_equals" },
     { "include": "#keyword.operator.bit_or" },
-    { "include": "#keyword.operator.bit_xor" }
+    { "include": "#keyword.operator.compare" },
+    { "include": "#keyword.operator.greater_or_equals" },
+    { "include": "#keyword.operator.greater" },
+    { "include": "#keyword.operator.less_or_equals" },
+    { "include": "#keyword.operator.less" }
    ]
   },
 
+  "keyword.if": {
+   "name": "keyword.control.if.kay",
+   "match": "\\b(?:if)\\b"
+  },
+  "keyword.else": {
+   "name": "keyword.control.else.kay",
+   "match": "\\b(?:else)\\b"
+  },
+  "keyword.do": {
+   "name": "keyword.control.do.kay",
+   "match": "\\b(?:do)\\b"
+  },
+  "keyword.loop": {
+   "name": "keyword.control.loop.kay",
+   "match": "\\b(?:loop)\\b"
+  },
+  "keyword.break": {
+   "name": "keyword.control.break.kay",
+   "match": "\\b(?:break)\\b"
+  },
+  "keyword.continue": {
+   "name": "keyword.control.continue.kay",
+   "match": "\\b(?:continue)\\b"
+  },
   "keyword.control_flow": {
-   "name": "keyword.control.kay",
-   "match": "\\b(?:do|if|else|loop|break|continue)\\b"
+   "patterns": [
+    { "include": "#keyword.if" },
+    { "include": "#keyword.else" },
+    { "include": "#keyword.do" },
+    { "include": "#keyword.loop" },
+    { "include": "#keyword.break" },
+    { "include": "#keyword.continue" }
+   ]
+  },
+
+  "keyword.let": {
+   "name": "storage.modifier.let.kay",
+   "match": "\\b(?:let)\\b"
+  },
+  "keyword.var": {
+   "name": "storage.modifier.var.kay",
+   "match": "\\b(?:var)\\b"
   },
   "keyword.storage_modifier": {
-   "name": "storage.modifier.kay",
-   "match": "\\b(?:let|var)\\b"
+   "patterns": [
+    { "include": "#keyword.let" },
+    { "include": "#keyword.var" }
+   ]
+  },
+
+  "keyword.builtin_print": {
+   "name": "support.function.builtin_print.kay",
+   "match": "\\b(?:print)\\b"
+  },
+  "keyword.builtin_println": {
+   "name": "support.function.builtin_println.kay",
+   "match": "\\b(?:println)\\b"
+  },
+  "keyword.builtin_eprint": {
+   "name": "support.function.builtin_eprint.kay",
+   "match": "\\b(?:eprint)\\b"
+  },
+  "keyword.builtin_eprintln": {
+   "name": "support.function.builtin_eprintln.kay",
+   "match": "\\b(?:eprintln)\\b"
   },
   "keyword.builtin_function": {
-   "name": "support.function.kay",
-   "match": "\\b(?:print|println|eprint|eprintln)\\b"
+   "patterns": [
+    { "include": "#keyword.builtin_print" },
+    { "include": "#keyword.builtin_println" },
+    { "include": "#keyword.builtin_eprint" },
+    { "include": "#keyword.builtin_eprintln" }
+   ]
   },
   "keyword": {
    "patterns": [
@@ -248,9 +557,19 @@
    ]
   },
 
+  "literal.true": {
+   "name": "constant.language.true.kay",
+   "match": "\\b(?:true)\\b"
+  },
+  "literal.false": {
+   "name": "constant.language.false.kay",
+   "match": "\\b(?:false)\\b"
+  },
   "literal.boolean": {
-   "name": "constant.language.boolean.kay",
-   "match": "\\b(?:true|false)\\b"
+   "patterns": [
+    { "include": "#literal.true" },
+    { "include": "#literal.false" }
+   ]
   },
 
   "literal.character.empty": {
@@ -477,10 +796,31 @@
    ]
   },
 
-  "identifier.builtin_type": {
-   "name": "entity.name.type",
-   "match": "\\b(?:i64|ascii|bool|str)\\b"
+  "identifier.builtin_i64": {
+   "name": "entity.name.type.i64.kay",
+   "match": "\\b(?:i64)\\b"
   },
+  "identifier.builtin_ascii": {
+   "name": "entity.name.type.ascii.kay",
+   "match": "\\b(?:ascii)\\b"
+  },
+  "identifier.builtin_bool": {
+   "name": "entity.name.type.bool.kay",
+   "match": "\\b(?:bool)\\b"
+  },
+  "identifier.builtin_str": {
+   "name": "entity.name.type.str.kay",
+   "match": "\\b(?:str)\\b"
+  },
+  "identifier.builtin_type": {
+   "patterns": [
+    { "include": "#identifier.builtin_i64" },
+    { "include": "#identifier.builtin_ascii" },
+    { "include": "#identifier.builtin_bool" },
+    { "include": "#identifier.builtin_str" }
+   ]
+  },
+
   "identifier.regular": {
    "name": "variable.name.kay",
    "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
@@ -492,7 +832,7 @@
     }
    }
   },
-  "identifier.string": {
+  "identifier.string.valid": {
    "name": "string.quoted.other.kay variable.name.kay",
    "match": "`((?:[^`])*)`",
    "captures": {
@@ -518,7 +858,7 @@
    "patterns": [
     { "include": "#identifier.builtin_type" },
     { "include": "#identifier.regular" },
-    { "include": "#identifier.string" },
+    { "include": "#identifier.string.valid" },
     { "include": "#identifier.string.unclosed" }
    ]
   }
