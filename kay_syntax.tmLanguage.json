@@ -524,6 +524,10 @@
    "name": "constant.character.escape.double_quote.kay",
    "match": "\\\\\""
   },
+  "escape.escape": {
+   "name": "constant.character.escape.escape.kay",
+   "match": "\\\\e"
+  },
   "escape.newline": {
    "name": "constant.character.escape.newline.kay",
    "match": "\\\\n"
@@ -549,6 +553,7 @@
     { "include": "#escape.backslash" },
     { "include": "#escape.single_quote" },
     { "include": "#escape.double_quote" },
+    { "include": "#escape.escape" },
     { "include": "#escape.newline" },
     { "include": "#escape.carriage_return" },
     { "include": "#escape.tab" },

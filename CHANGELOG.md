@@ -22,13 +22,15 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ### Added
 
 - (kay 0.6.4) `0d` decimal numbers prefix
-- (kay 0.6.4) `#* *#` block comments
 - (kay 0.6.4) Prefix short hand assignment operator `!=`, old boolean "not equals" `!=` is now `!==`
+- (kay 0.6.4) More string and characters escape codes:
+    - `\e` -> ASCII `ESC` (`0x1b`)
 <!--  -->
 - Classification of whitespace
 
 ### Changed
 
+- (kay 0.6.4) `#* *#` block comments
 - Better tokens classification and improved naming consistency
 
 ## 0.1.4 - 2025-06-21
