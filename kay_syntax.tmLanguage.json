@@ -544,9 +544,145 @@
    "name": "constant.character.escape.null.kay",
    "match": "\\\\0"
   },
+  "escape.caret.NUL": {
+   "name": "constant.character.escape.caret.NUL.kay",
+   "match": "\\\\\\^@"
+  },
+  "escape.caret.SOH": {
+   "name": "constant.character.escape.caret.SOH.kay",
+   "match": "\\\\\\^A"
+  },
+  "escape.caret.STX": {
+   "name": "constant.character.escape.caret.STX.kay",
+   "match": "\\\\\\^B"
+  },
+  "escape.caret.ETX": {
+   "name": "constant.character.escape.caret.ETX.kay",
+   "match": "\\\\\\^C"
+  },
+  "escape.caret.EOT": {
+   "name": "constant.character.escape.caret.EOT.kay",
+   "match": "\\\\\\^D"
+  },
+  "escape.caret.ENQ": {
+   "name": "constant.character.escape.caret.ENQ.kay",
+   "match": "\\\\\\^E"
+  },
+  "escape.caret.ACK": {
+   "name": "constant.character.escape.caret.ACK.kay",
+   "match": "\\\\\\^F"
+  },
+  "escape.caret.BEL": {
+   "name": "constant.character.escape.caret.BEL.kay",
+   "match": "\\\\\\^G"
+  },
+  "escape.caret.BS": {
+   "name": "constant.character.escape.caret.BS.kay",
+   "match": "\\\\\\^H"
+  },
+  "escape.caret.HT": {
+   "name": "constant.character.escape.caret.HT.kay",
+   "match": "\\\\\\^I"
+  },
+  "escape.caret.LF": {
+   "name": "constant.character.escape.caret.LF.kay",
+   "match": "\\\\\\^J"
+  },
+  "escape.caret.VT": {
+   "name": "constant.character.escape.caret.VT.kay",
+   "match": "\\\\\\^K"
+  },
+  "escape.caret.FF": {
+   "name": "constant.character.escape.caret.FF.kay",
+   "match": "\\\\\\^L"
+  },
+  "escape.caret.CR": {
+   "name": "constant.character.escape.caret.CR.kay",
+   "match": "\\\\\\^M"
+  },
+  "escape.caret.SO": {
+   "name": "constant.character.escape.caret.SO.kay",
+   "match": "\\\\\\^N"
+  },
+  "escape.caret.SI": {
+   "name": "constant.character.escape.caret.SI.kay",
+   "match": "\\\\\\^O"
+  },
+  "escape.caret.DLE": {
+   "name": "constant.character.escape.caret.DLE.kay",
+   "match": "\\\\\\^P"
+  },
+  "escape.caret.DC1": {
+   "name": "constant.character.escape.caret.DC1.kay",
+   "match": "\\\\\\^Q"
+  },
+  "escape.caret.DC2": {
+   "name": "constant.character.escape.caret.DC2.kay",
+   "match": "\\\\\\^R"
+  },
+  "escape.caret.DC3": {
+   "name": "constant.character.escape.caret.DC3.kay",
+   "match": "\\\\\\^S"
+  },
+  "escape.caret.DC4": {
+   "name": "constant.character.escape.caret.DC4.kay",
+   "match": "\\\\\\^T"
+  },
+  "escape.caret.NAK": {
+   "name": "constant.character.escape.caret.NAK.kay",
+   "match": "\\\\\\^U"
+  },
+  "escape.caret.SYN": {
+   "name": "constant.character.escape.caret.SYN.kay",
+   "match": "\\\\\\^V"
+  },
+  "escape.caret.ETB": {
+   "name": "constant.character.escape.caret.ETB.kay",
+   "match": "\\\\\\^W"
+  },
+  "escape.caret.CAN": {
+   "name": "constant.character.escape.caret.CAN.kay",
+   "match": "\\\\\\^X"
+  },
+  "escape.caret.EM": {
+   "name": "constant.character.escape.caret.EM.kay",
+   "match": "\\\\\\^Y"
+  },
+  "escape.caret.SUB": {
+   "name": "constant.character.escape.caret.SUB.kay",
+   "match": "\\\\\\^Z"
+  },
+  "escape.caret.ESC": {
+   "name": "constant.character.escape.caret.ESC.kay",
+   "match": "\\\\\\^\\["
+  },
+  "escape.caret.FS": {
+   "name": "constant.character.escape.caret.FS.kay",
+   "match": "\\\\\\^\\\\"
+  },
+  "escape.caret.GS": {
+   "name": "constant.character.escape.caret.GS.kay",
+   "match": "\\\\\\^\\]"
+  },
+  "escape.caret.RS": {
+   "name": "constant.character.escape.caret.RS.kay",
+   "match": "\\\\\\^\\^"
+  },
+  "escape.caret.US": {
+   "name": "constant.character.escape.caret.US.kay",
+   "match": "\\\\\\^_"
+  },
+  "escape.caret.DEL": {
+   "name": "constant.character.escape.caret.DEL.kay",
+   "match": "\\\\\\^\\?"
+  },
+  "escape.caret.unrecognized": {
+   "name": "constant.character.escape.caret.kay invalid.illegal.escape.caret.kay",
+   "match": "\\\\\\^."
+  },
   "escape.unrecognized": {
    "name": "invalid.illegal.escape.kay",
-   "match": "\\\\."
+   "match": "\\\\[^^\\n]"
   },
   "escape": {
    "patterns": [
@@ -558,6 +694,40 @@
     { "include": "#escape.carriage_return" },
     { "include": "#escape.tab" },
     { "include": "#escape.null" },
+    { "include": "#escape.caret.NUL" },
+    { "include": "#escape.caret.SOH" },
+    { "include": "#escape.caret.STX" },
+    { "include": "#escape.caret.ETX" },
+    { "include": "#escape.caret.EOT" },
+    { "include": "#escape.caret.ENQ" },
+    { "include": "#escape.caret.ACK" },
+    { "include": "#escape.caret.BEL" },
+    { "include": "#escape.caret.BS" },
+    { "include": "#escape.caret.HT" },
+    { "include": "#escape.caret.LF" },
+    { "include": "#escape.caret.VT" },
+    { "include": "#escape.caret.FF" },
+    { "include": "#escape.caret.CR" },
+    { "include": "#escape.caret.SO" },
+    { "include": "#escape.caret.SI" },
+    { "include": "#escape.caret.DLE" },
+    { "include": "#escape.caret.DC1" },
+    { "include": "#escape.caret.DC2" },
+    { "include": "#escape.caret.DC3" },
+    { "include": "#escape.caret.DC4" },
+    { "include": "#escape.caret.NAK" },
+    { "include": "#escape.caret.SYN" },
+    { "include": "#escape.caret.ETB" },
+    { "include": "#escape.caret.CAN" },
+    { "include": "#escape.caret.EM" },
+    { "include": "#escape.caret.SUB" },
+    { "include": "#escape.caret.ESC" },
+    { "include": "#escape.caret.FS" },
+    { "include": "#escape.caret.GS" },
+    { "include": "#escape.caret.RS" },
+    { "include": "#escape.caret.US" },
+    { "include": "#escape.caret.DEL" },
+    { "include": "#escape.caret.unrecognized" },
     { "include": "#escape.unrecognized" }
    ]
   },
@@ -583,7 +753,7 @@
   },
   "literal.character.long": {
    "name": "string.quoted.single.kay invalid.illegal.long.kay",
-   "match": "'((?:\\\\.|[^'\\\\]){2,})'",
+   "match": "'((?:\\\\\\^.|\\\\[^^\\n]|[^'\\\\]){2,})'",
    "captures": {
     "1": {
      "patterns": [
@@ -595,7 +765,7 @@
   },
   "literal.character.valid": {
    "name": "string.quoted.single.kay",
-   "match": "'((?:\\\\.|[^'\\\\]))'",
+   "match": "'((?:\\\\\\^.|\\\\[^^\\n]|[^'\\\\]))'",
    "captures": {
     "1": {
      "patterns": [
@@ -607,7 +777,7 @@
   },
   "literal.character.unclosed": {
    "name": "string.quoted.single.kay invalid.illegal.unclosed.kay",
-   "match": "'((?:\\\\.?|[^'\\\\])*)",
+   "match": "'((?:\\\\\\^.?|\\\\[^^\\n]?|[^'\\\\])*)",
    "captures": {
     "1": {
      "patterns": [
@@ -628,7 +798,7 @@
 
   "literal.string.valid": {
    "name": "string.quoted.double.kay",
-   "match": "\"((?:\\\\.|[^\"\\\\])*)\"",
+   "match": "\"((?:\\\\\\^.|\\\\[^^\\n]|[^\"\\\\])*)\"",
    "captures": {
     "1": {
      "patterns": [
@@ -640,7 +810,7 @@
   },
   "literal.string.unclosed": {
    "name": "string.quoted.double.kay invalid.illegal.unclosed.kay",
-   "match": "\"((?:\\\\.?|[^\"\\\\])*)",
+   "match": "\"((?:\\\\\\^.?|\\\\[^^\\n]?|[^\"\\\\])*)",
    "captures": {
     "1": {
      "patterns": [

@@ -25,6 +25,10 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - (kay 0.6.4) Prefix short hand assignment operator `!=`, old boolean "not equals" `!=` is now `!==`
 - (kay 0.6.4) More string and characters escape codes:
     - `\e` -> ASCII `ESC` (`0x1b`)
+    - [ASCII caret escape characters](https://en.wikipedia.org/wiki/ASCII#:~:text=%5Bedit%5D-,Control%20code%20table,-%5Bedit%5D):
+        - `\^@` -> `NUL` (`Null`, `0x00`)
+        - ...
+        - `\^?` -> `DEL` (`Delete`, `0x7f`)
 <!--  -->
 - Classification of whitespace
 
