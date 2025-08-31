@@ -17,16 +17,20 @@
   { "include": "#unrecognized" }
  ],
  "repository": {
+  "__comments__": {
+   "comment": "# IDEA(stefano): try factoring out common match patterns"
+  },
+
   "whitespace": {
    "name": "entity.other.whitespace.kay",
    "match": "[ \\t\\n\\r\\f\\v]"
   },
   "unrecognized": {
-   "name": "invalid.illegal.unrecognized.kay",
+   "name": "invalid.unrecognized.kay",
    "match": "."
   },
   "non_ascii": {
-   "name": "invalid.illegal.non_ascii.kay",
+   "name": "invalid.non_ascii.kay",
    "match": "[^\\x00-\\x7f]"
   },
 
@@ -41,7 +45,7 @@
   "comment.line": {
    "name": "comment.line.number-sign.kay",
    "begin": "#",
-   "end": "\\n"
+   "end": "[\\r\\n]"
   },
   "comment": {
    "patterns": [
@@ -479,36 +483,12 @@
    ]
   },
 
-  "keyword.builtin_print": {
-   "name": "support.function.builtin_print.kay",
-   "match": "\\b(?:print)\\b"
-  },
-  "keyword.builtin_println": {
-   "name": "support.function.builtin_println.kay",
-   "match": "\\b(?:println)\\b"
-  },
-  "keyword.builtin_eprint": {
-   "name": "support.function.builtin_eprint.kay",
-   "match": "\\b(?:eprint)\\b"
-  },
-  "keyword.builtin_eprintln": {
-   "name": "support.function.builtin_eprintln.kay",
-   "match": "\\b(?:eprintln)\\b"
-  },
-  "keyword.builtin_function": {
-   "patterns": [
-    { "include": "#keyword.builtin_print" },
-    { "include": "#keyword.builtin_println" },
-    { "include": "#keyword.builtin_eprint" },
-    { "include": "#keyword.builtin_eprintln" }
-   ]
-  },
   "keyword": {
+   "comment": "# TODO: move builtin_function to #identifier",
    "patterns": [
     { "include": "#keyword.operator" },
     { "include": "#keyword.control_flow" },
-    { "include": "#keyword.storage_modifier" },
-    { "include": "#keyword.builtin_function" }
+    { "include": "#keyword.storage_modifier" }
    ]
   },
 
@@ -677,20 +657,20 @@
    "match": "\\\\\\^\\?"
   },
   "escape.caret.unrecognized": {
-   "name": "constant.character.escape.caret.kay invalid.illegal.escape.caret.kay",
-   "match": "\\\\\\^."
+   "name": "constant.character.escape.caret.kay invalid.unrecognized.kay",
+   "match": "\\\\\\^[^\\r\\n]"
   },
   "escape.caret.unterminated": {
-   "name": "invalid.illegal.escape.caret.unterminated.kay",
-   "match": "\\\\\\^\\n"
+   "name": "constant.character.escape.caret.kay invalid.unterminated.kay",
+   "match": "\\\\\\^(?:[\\r\\n]|$)"
   },
   "escape.unrecognized": {
-   "name": "invalid.illegal.escape.kay",
-   "match": "\\\\[^^\\n]"
+   "name": "constant.character.escape.kay invalid.unrecognized.kay",
+   "match": "\\\\[^^\\r\\n]"
   },
   "escape.unterminated": {
-   "name": "invalid.illegal.escape.unterminated.kay",
-   "match": "\\\\\\n"
+   "name": "constant.character.escape.kay invalid.unterminated.kay",
+   "match": "\\\\(?:[\\r\\n]|$)"
   },
   "escape": {
    "patterns": [
@@ -736,8 +716,8 @@
     { "include": "#escape.caret.US" },
     { "include": "#escape.caret.DEL" },
     { "include": "#escape.caret.unterminated" },
-    { "include": "#escape.unterminated" },
     { "include": "#escape.caret.unrecognized" },
+    { "include": "#escape.unterminated" },
     { "include": "#escape.unrecognized" }
    ]
   },
@@ -758,12 +738,12 @@
   },
 
   "literal.character.empty": {
-   "name": "string.quoted.single.kay invalid.illegal.empty.kay",
+   "name": "string.quoted.single.kay invalid.empty.kay",
    "match": "''"
   },
   "literal.character.long": {
-   "name": "string.quoted.single.kay invalid.illegal.long.kay",
-   "match": "'((?:\\\\\\^.|\\\\[^^\\n]|[^'\\\\]){2,})'",
+   "name": "string.quoted.single.kay invalid.long.kay markup.underline.kay",
+   "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n])){2,})'",
    "captures": {
     "1": {
      "patterns": [
@@ -775,7 +755,7 @@
   },
   "literal.character.valid": {
    "name": "string.quoted.single.kay",
-   "match": "'((?:\\\\\\^.|\\\\[^^\\n]|[^'\\\\]))'",
+   "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n])))'",
    "captures": {
     "1": {
      "patterns": [
@@ -786,8 +766,8 @@
    }
   },
   "literal.character.unclosed": {
-   "name": "string.quoted.single.kay invalid.illegal.unclosed.kay",
-   "match": "'((?:\\\\\\^.?|\\\\[^^\\n]?|[^'\\\\])*)",
+   "name": "string.quoted.single.kay invalid.unclosed.kay",
+   "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]?|[^^\\r\\n]))*)",
    "captures": {
     "1": {
      "patterns": [
@@ -808,7 +788,7 @@
 
   "literal.string.valid": {
    "name": "string.quoted.double.kay",
-   "match": "\"((?:\\\\\\^.|\\\\[^^\\n]|[^\"\\\\])*)\"",
+   "match": "\"((?:[^\\\\\"\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n]))*)\"",
    "captures": {
     "1": {
      "patterns": [
@@ -819,8 +799,8 @@
    }
   },
   "literal.string.unclosed": {
-   "name": "string.quoted.double.kay invalid.illegal.unclosed.kay",
-   "match": "\"((?:\\\\\\^.?|\\\\[^^\\n]?|[^\"\\\\])*)",
+   "name": "string.quoted.double.kay invalid.unclosed.kay",
+   "match": "\"((?:[^\\\\\"\\r\\n]|\\\\(?:\\^[^\\r\\n]?|[^^\\r\\n]))*)",
    "captures": {
     "1": {
      "patterns": [
@@ -839,7 +819,7 @@
 
   "literal.raw_string.valid": {
    "name": "string.quoted.double.raw.kay",
-   "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)\"",
+   "match": "(r)\"((?:[^\\\\\"\\r\\n]|\\\\(?:(?!\")|\"))*)\"",
    "captures": {
     "1": { "name": "markup.changed.prefix.kay" },
     "2": {
@@ -851,8 +831,8 @@
    }
   },
   "literal.raw_string.unclosed": {
-   "name": "string.quoted.double.raw.kay invalid.illegal.unclosed.kay",
-   "match": "(r)\"((?:\\\\(?=[^\"])|\\\\\"|[^\"\\\\])*)",
+   "name": "string.quoted.double.raw.kay invalid.unclosed.kay",
+   "match": "(r)\"((?:[^\\\\\"\\r\\n]|\\\\(?:(?!\")|\"))*)",
    "captures": {
     "1": { "name": "markup.changed.prefix.kay" },
     "2": {
@@ -873,19 +853,15 @@
 
   "literal.integer.binary": {
    "name": "constant.numeric.integer.binary.kay",
-   "match": "(0(b))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "(0(b))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": { "name": "constant.numeric.integer.prefix.kay" },
     "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.illegal.digit.kay",
-       "match": "[2-9]"
-      },
-      {
-       "name": "invalid.illegal.letter.kay",
-       "match": "[A-Za-z]"
+       "name": "invalid.digit.kay",
+       "match": "[2-9A-Za-z]"
       },
       { "include": "#non_ascii" }
      ]
@@ -894,19 +870,15 @@
   },
   "literal.integer.octal": {
    "name": "constant.numeric.integer.octal.kay",
-   "match": "(0(o))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "(0(o))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": { "name": "constant.numeric.integer.prefix.kay" },
     "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.illegal.digit.kay",
-       "match": "[8-9]"
-      },
-      {
-       "name": "invalid.illegal.letter.kay",
-       "match": "[A-Za-z]"
+       "name": "invalid.digit.kay",
+       "match": "[8-9A-Za-z]"
       },
       { "include": "#non_ascii" }
      ]
@@ -915,14 +887,14 @@
   },
   "literal.integer.hexadecimal": {
    "name": "constant.numeric.integer.hexadecimal.kay",
-   "match": "(0(x))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "(0(x))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": { "name": "constant.numeric.integer.prefix.kay" },
     "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.illegal.digit.kay",
+       "name": "invalid.digit.kay",
        "match": "[G-Zg-z]"
       },
       { "include": "#non_ascii" }
@@ -932,14 +904,14 @@
   },
   "literal.integer.decimal_prefix": {
    "name": "constant.numeric.integer.decimal_prefix.kay",
-   "match": "(0(d))((?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "(0(d))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": { "name": "constant.numeric.integer.prefix.kay" },
     "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.illegal.letter.kay",
+       "name": "invalid.digit.kay",
        "match": "[A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -949,12 +921,12 @@
   },
   "literal.integer.decimal": {
    "name": "constant.numeric.integer.decimal.kay",
-   "match": "(\\d(?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "(\\d(?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": {
      "patterns": [
       {
-       "name": "invalid.illegal.letter.kay",
+       "name": "invalid.digit.kay",
        "match": "[A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -982,6 +954,30 @@
    ]
   },
 
+  "identifier.builtin_print": {
+   "name": "support.function.builtin_print.kay",
+   "match": "\\b(?:print)\\b"
+  },
+  "identifier.builtin_println": {
+   "name": "support.function.builtin_println.kay",
+   "match": "\\b(?:println)\\b"
+  },
+  "identifier.builtin_eprint": {
+   "name": "support.function.builtin_eprint.kay",
+   "match": "\\b(?:eprint)\\b"
+  },
+  "identifier.builtin_eprintln": {
+   "name": "support.function.builtin_eprintln.kay",
+   "match": "\\b(?:eprintln)\\b"
+  },
+  "identifier.builtin_function": {
+   "patterns": [
+    { "include": "#identifier.builtin_print" },
+    { "include": "#identifier.builtin_println" },
+    { "include": "#identifier.builtin_eprint" },
+    { "include": "#identifier.builtin_eprintln" }
+   ]
+  },
   "identifier.builtin_i64": {
    "name": "entity.name.type.i64.kay",
    "match": "\\b(?:i64)\\b"
@@ -1009,7 +1005,7 @@
 
   "identifier.regular": {
    "name": "variable.name.kay",
-   "match": "([A-Za-z_](?:[A-Za-z\\d_]|[^\\x00-\\x7f])*)",
+   "match": "([A-Za-z_](?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": {
      "patterns": [
@@ -1020,7 +1016,7 @@
   },
   "identifier.string.valid": {
    "name": "string.quoted.other.kay variable.name.kay",
-   "match": "`((?:[^`])*)`",
+   "match": "`([^`\\r\\n]*)`",
    "captures": {
     "1": {
      "patterns": [
@@ -1030,8 +1026,8 @@
    }
   },
   "identifier.string.unclosed": {
-   "name": "string.quoted.other.kay variable.name.kay invalid.illegal.unclosed.kay",
-   "match": "`((?:[^`])*)",
+   "name": "string.quoted.other.kay variable.name.kay invalid.unclosed.kay",
+   "match": "`([^`\\r\\n]*)",
    "captures": {
     "1": {
      "patterns": [
@@ -1043,6 +1039,7 @@
   "identifier": {
    "patterns": [
     { "include": "#identifier.builtin_type" },
+    { "include": "#identifier.builtin_function" },
     { "include": "#identifier.regular" },
     { "include": "#identifier.string.valid" },
     { "include": "#identifier.string.unclosed" }

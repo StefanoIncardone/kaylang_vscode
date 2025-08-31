@@ -1,9 +1,9 @@
 {
  "comments": {
   "lineComment": {
-   "comment": "#",
+   "comment": "#"
   },
-  "blockComment": ["#*", "*#"],
+  "blockComment": ["#*", "*#"]
  },
  "brackets": [
   ["{", "}"],
@@ -18,7 +18,7 @@
   { "open": "\"",  "close": "\"",  "notIn": ["string", "comment"] },
   { "open": "r\"", "close": "\"",  "notIn": ["string", "comment"] },
   { "open": "'",   "close": "'",   "notIn": ["string", "comment"] },
-  { "open": "`",   "close": "`",   "notIn": ["string", "comment"] },
+  { "open": "`",   "close": "`",   "notIn": ["string", "comment"] }
  ],
  "surroundingPairs": [
   { "open": "{",  "close": "}" },
@@ -26,6 +26,6 @@
   { "open": "(",  "close": ")" },
   { "open": "\"", "close": "\"" },
   { "open": "'",  "close": "'" },
-  { "open": "`",  "close": "`" },
- ],
+  { "open": "`",  "close": "`" }
+ ]
 }
