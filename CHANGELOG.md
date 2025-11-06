@@ -13,9 +13,6 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 - Highlighting of emojis as errors, especially in identifiers longer than 63 characters
 - High CPU load when inspecting tokens which contain complex unicode graphemes
 - Highlighting of unclosed multiline comments, and unopend multiline comments
-- Adding/removing a line comment on a line that starts with a block comment removes the first `#` of
-    the multiline comment (this might be impossible to fix, because block comments start with the
-    same character as line comments)
 
 ## 0.1.5 -
 
@@ -35,7 +32,13 @@ but may switch to [CalVer Versioning](https://calver.org/) in the future.
 ### Changed
 
 - (kay 0.6.4) `#* *#` block comments
+- (kay 0.6.4) `##` line comments
 - Better tokens classification and improved naming consistency
+
+### Fixed
+
+- Adding/removing a line comment on a line that starts with a block comment removes the first `#` of
+    the multiline comment
 
 ## 0.1.4 - 2025-06-21
 

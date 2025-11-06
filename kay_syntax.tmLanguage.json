@@ -44,13 +44,20 @@
   },
   "comment.line": {
    "name": "comment.line.number-sign.kay",
+   "begin": "##",
+   "end": "[\\r\\n]"
+  },
+  "comment.old_style_line": {
+   "name": "comment.line.number-sign.kay invalid.old_style.kay",
+   "contentName": "comment.line.number-sign.kay",
    "begin": "#",
    "end": "[\\r\\n]"
   },
   "comment": {
    "patterns": [
     { "include": "#comment.block" },
-    { "include": "#comment.line" }
+    { "include": "#comment.line" },
+    { "include": "#comment.old_style_line" }
    ]
   },
 
