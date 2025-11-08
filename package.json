@@ -1,22 +1,14 @@
 {
  "name": "kay-lang",
- "author": {
-  "name": "Stefano Incardone"
- },
- "license": "MIT",
- "repository": {
-  "type": "git",
-  "url": "https://github.com/StefanoIncardone/kaylang_vscode"
- },
  "displayName": "Kay Lang",
- "description": "Syntax highlighting for Kay Lang",
  "version": "0.1.5-dev",
- "engines": {
-  "vscode": "^1.102.1"
- },
- "categories": [
-  "Programming Languages"
- ],
+ "author": { "name": "Stefano Incardone" },
+ "categories": ["Programming Languages"],
+ "description": "Syntax highlighting for Kay Lang",
+ "repository": { "type": "git", "url": "https://github.com/StefanoIncardone/kaylang_vscode" },
+ "license": "MIT",
+ "engines": { "vscode": "^1.102.1" },
+
  "contributes": {
   "languages": [
    {
