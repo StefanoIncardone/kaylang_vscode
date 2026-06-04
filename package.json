@@ -19,6 +19,15 @@
    },
    {
     "id": "kay-markdown-injection"
+   },
+   {
+    "id": "kbe",
+    "aliases": ["Kbe", "kbe"],
+    "extensions": [".kbe"],
+    "configuration": "./kbe_language-configuration.json"
+   },
+   {
+    "id": "kbe-markdown-injection"
    }
   ],
   "grammars": [
@@ -34,6 +43,20 @@
     "injectTo": ["text.html.markdown"],
     "embeddedLanguages": {
      "meta.embedded.block.kay": "kay"
+    }
+   },
+   {
+    "language": "kbe",
+    "scopeName": "source.kbe",
+    "path": "./kbe_syntax.tmLanguage.json"
+   },
+   {
+    "language": "kbe-markdown-injection",
+    "scopeName": "markdown.kbe.codeblock",
+    "path": "./kbe_markdown-injection.tmLanguage.json",
+    "injectTo": ["text.html.markdown"],
+    "embeddedLanguages": {
+     "meta.embedded.block.kbe": "kbe"
     }
    }
   ]

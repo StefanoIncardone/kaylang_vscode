@@ -1,8 +1,8 @@
 {
  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
- "name": "Kay",
- "fileTypes": [".kay"],
- "scopeName": "source.kay",
+ "name": "Kbe",
+ "fileTypes": [".kbe"],
+ "scopeName": "source.kbe",
  "patterns": [
   { "include": "#comment" },
   { "include": "#bracket" },
@@ -17,25 +17,21 @@
   { "include": "#unrecognized" }
  ],
  "repository": {
-  "__comments__": {
-   "comment": "# IDEA(stefano): try factoring out common match patterns"
-  },
-
   "whitespace": {
-   "name": "entity.other.whitespace.kay",
+   "name": "entity.other.whitespace.kbe",
    "match": "[ \\t\\n\\r\\f\\v]"
   },
   "unrecognized": {
-   "name": "invalid.unrecognized.kay",
+   "name": "invalid.illegal.unrecognized.kbe",
    "match": "."
   },
   "non_ascii": {
-   "name": "invalid.non_ascii.kay",
+   "name": "invalid.illegal.non_ascii.kbe",
    "match": "[^\\x00-\\x7f]"
   },
 
   "comment.block": {
-   "name": "comment.block.kay",
+   "name": "comment.block.kbe",
    "begin": "#\\*",
    "end": "\\*#",
    "patterns": [
@@ -43,46 +39,39 @@
    ]
   },
   "comment.line": {
-   "name": "comment.line.number-sign.kay",
+   "name": "comment.line.number-sign.kbe",
    "begin": "##",
-   "end": "[\\r\\n]"
-  },
-  "comment.old_style_line": {
-   "name": "comment.line.number-sign.kay invalid.old_style.kay",
-   "contentName": "comment.line.number-sign.kay",
-   "begin": "#",
    "end": "[\\r\\n]"
   },
   "comment": {
    "patterns": [
     { "include": "#comment.block" },
-    { "include": "#comment.line" },
-    { "include": "#comment.old_style_line" }
+    { "include": "#comment.line" }
    ]
   },
 
   "bracket.open_round": {
-   "name": "entity.other.bracket.open_round.kay",
+   "name": "entity.other.bracket.open_round.kbe",
    "match": "\\("
   },
   "bracket.close_round": {
-   "name": "entity.other.bracket.close_round.kay",
+   "name": "entity.other.bracket.close_round.kbe",
    "match": "\\)"
   },
   "bracket.open_square": {
-   "name": "entity.other.bracket.open_square.kay",
+   "name": "entity.other.bracket.open_square.kbe",
    "match": "\\["
   },
   "bracket.close_square": {
-   "name": "entity.other.bracket.close_square.kay",
+   "name": "entity.other.bracket.close_square.kbe",
    "match": "]"
   },
   "bracket.open_curly": {
-   "name": "entity.other.bracket.open_curly.kay",
+   "name": "entity.other.bracket.open_curly.kbe",
    "match": "{"
   },
   "bracket.close_curly": {
-   "name": "entity.other.bracket.close_curly.kay",
+   "name": "entity.other.bracket.close_curly.kbe",
    "match": "}"
   },
   "bracket": {
@@ -97,277 +86,277 @@
   },
 
   "colon": {
-   "name": "entity.other.colon.kay",
+   "name": "entity.other.colon.kbe",
    "match": ":"
   },
   "semicolon": {
-   "name": "entity.other.semicolon.kay",
+   "name": "entity.other.semicolon.kbe",
    "match": ";"
   },
   "comma": {
-   "name": "entity.other.comma.kay",
+   "name": "entity.other.comma.kbe",
    "match": ","
   },
 
   "keyword.operator.not_equals_equals": {
-   "name": "keyword.operator.not_equals_equals.kay",
+   "name": "keyword.operator.not_equals_equals.kbe",
    "match": "!=="
   },
   "keyword.operator.equals_equals": {
-   "name": "keyword.operator.equals_equals.kay",
+   "name": "keyword.operator.equals_equals.kbe",
    "match": "=="
   },
   "keyword.operator.equals": {
-   "name": "keyword.operator.equals.kay",
+   "name": "keyword.operator.equals.kbe",
    "match": "="
   },
   "keyword.operator.not_equals": {
-   "name": "keyword.operator.not_equals.kay",
+   "name": "keyword.operator.not_equals.kbe",
    "match": "!="
   },
   "keyword.operator.not": {
-   "name": "keyword.operator.not.kay",
+   "name": "keyword.operator.not.kbe",
    "match": "!"
   },
   "keyword.operator.len": {
-   "name": "keyword.operator.new.len.kay",
+   "name": "keyword.operator.new.len.kbe",
    "match": "\\b(?:len)\\b"
   },
   "keyword.operator.wrapping_pow_equals": {
-   "name": "keyword.operator.wrapping_pow_equals.kay",
+   "name": "keyword.operator.wrapping_pow_equals.kbe",
    "match": "\\*\\*\\\\="
   },
   "keyword.operator.saturating_pow_equals": {
-   "name": "keyword.operator.staturating_pow_equals.kay",
+   "name": "keyword.operator.staturating_pow_equals.kbe",
    "match": "\\*\\*\\|="
   },
   "keyword.operator.pow_equals": {
-   "name": "keyword.operator.pow_equals.kay",
+   "name": "keyword.operator.pow_equals.kbe",
    "match": "\\*\\*="
   },
   "keyword.operator.wrapping_pow": {
-   "name": "keyword.operator.wrapping_pow.kay",
+   "name": "keyword.operator.wrapping_pow.kbe",
    "match": "\\*\\*\\\\"
   },
   "keyword.operator.saturating_pow": {
-   "name": "keyword.operator.staturating_pow.kay",
+   "name": "keyword.operator.staturating_pow.kbe",
    "match": "\\*\\*\\|"
   },
   "keyword.operator.pow": {
-   "name": "keyword.operator.pow.kay",
+   "name": "keyword.operator.pow.kbe",
    "match": "\\*\\*"
   },
 
   "keyword.operator.wrapping_times_equals": {
-   "name": "keyword.operator.wrapping_times_equals.kay",
+   "name": "keyword.operator.wrapping_times_equals.kbe",
    "match": "\\*\\\\="
   },
   "keyword.operator.saturating_times_equals": {
-   "name": "keyword.operator.staturating_times_equals.kay",
+   "name": "keyword.operator.staturating_times_equals.kbe",
    "match": "\\*\\|="
   },
   "keyword.operator.times_equals": {
-   "name": "keyword.operator.times_equals.kay",
+   "name": "keyword.operator.times_equals.kbe",
    "match": "\\*="
   },
   "keyword.operator.wrapping_times": {
-   "name": "keyword.operator.wrapping_times.kay",
+   "name": "keyword.operator.wrapping_times.kbe",
    "match": "\\*\\\\"
   },
   "keyword.operator.saturating_times": {
-   "name": "keyword.operator.staturating_times.kay",
+   "name": "keyword.operator.staturating_times.kbe",
    "match": "\\*\\|"
   },
   "keyword.operator.times": {
-   "name": "keyword.operator.times.kay",
+   "name": "keyword.operator.times.kbe",
    "match": "\\*"
   },
   "keyword.operator.wrapping_divide_equals": {
-   "name": "keyword.operator.wrapping_divide_equals.kay",
+   "name": "keyword.operator.wrapping_divide_equals.kbe",
    "match": "/\\\\="
   },
   "keyword.operator.saturating_divide_equals": {
-   "name": "keyword.operator.staturating_divide_equals.kay",
+   "name": "keyword.operator.staturating_divide_equals.kbe",
    "match": "/\\|="
   },
   "keyword.operator.divide_equals": {
-   "name": "keyword.operator.divide_equals.kay",
+   "name": "keyword.operator.divide_equals.kbe",
    "match": "/="
   },
   "keyword.operator.wrapping_divide": {
-   "name": "keyword.operator.wrapping_divide.kay",
+   "name": "keyword.operator.wrapping_divide.kbe",
    "match": "/\\\\"
   },
   "keyword.operator.saturating_divide": {
-   "name": "keyword.operator.staturating_divide.kay",
+   "name": "keyword.operator.staturating_divide.kbe",
    "match": "/\\|"
   },
   "keyword.operator.divide": {
-   "name": "keyword.operator.divide.kay",
+   "name": "keyword.operator.divide.kbe",
    "match": "/"
   },
   "keyword.operator.remainder_equals": {
-   "name": "keyword.operator.remainder_equals.kay",
+   "name": "keyword.operator.remainder_equals.kbe",
    "match": "%="
   },
   "keyword.operator.remainder": {
-   "name": "keyword.operator.remainder.kay",
+   "name": "keyword.operator.remainder.kbe",
    "match": "%"
   },
   "keyword.operator.wrapping_plus_equals": {
-   "name": "keyword.operator.wrapping_plus_equals.kay",
+   "name": "keyword.operator.wrapping_plus_equals.kbe",
    "match": "\\+\\\\="
   },
   "keyword.operator.saturating_plus_equals": {
-   "name": "keyword.operator.staturating_plus_equals.kay",
+   "name": "keyword.operator.staturating_plus_equals.kbe",
    "match": "\\+\\|="
   },
   "keyword.operator.plus_equals": {
-   "name": "keyword.operator.plus_equals.kay",
+   "name": "keyword.operator.plus_equals.kbe",
    "match": "\\+="
   },
   "keyword.operator.wrapping_plus": {
-   "name": "keyword.operator.wrapping_plus.kay",
+   "name": "keyword.operator.wrapping_plus.kbe",
    "match": "\\+\\\\"
   },
   "keyword.operator.saturating_plus": {
-   "name": "keyword.operator.staturating_plus.kay",
+   "name": "keyword.operator.staturating_plus.kbe",
    "match": "\\+\\|"
   },
   "keyword.operator.plus": {
-   "name": "keyword.operator.plus.kay",
+   "name": "keyword.operator.plus.kbe",
    "match": "\\+"
   },
   "keyword.operator.wrapping_minus_equals": {
-   "name": "keyword.operator.wrapping_minus_equals.kay",
+   "name": "keyword.operator.wrapping_minus_equals.kbe",
    "match": "-\\\\="
   },
   "keyword.operator.saturating_minus_equals": {
-   "name": "keyword.operator.staturating_minus_equals.kay",
+   "name": "keyword.operator.staturating_minus_equals.kbe",
    "match": "-\\|="
   },
   "keyword.operator.minus_equals": {
-   "name": "keyword.operator.minus_equals.kay",
+   "name": "keyword.operator.minus_equals.kbe",
    "match": "-="
   },
   "keyword.operator.wrapping_minus": {
-   "name": "keyword.operator.wrapping_minus.kay",
+   "name": "keyword.operator.wrapping_minus.kbe",
    "match": "-\\\\"
   },
   "keyword.operator.saturating_minus": {
-   "name": "keyword.operator.staturating_minus.kay",
+   "name": "keyword.operator.staturating_minus.kbe",
    "match": "-\\|"
   },
   "keyword.operator.minus": {
-   "name": "keyword.operator.minus.kay",
+   "name": "keyword.operator.minus.kbe",
    "match": "-"
   },
   "keyword.operator.left_rotate_equals": {
-   "name": "keyword.operator.left_rotate_equals.kay",
+   "name": "keyword.operator.left_rotate_equals.kbe",
    "match": "<<<="
   },
   "keyword.operator.left_rotate": {
-   "name": "keyword.operator.left_rotate.kay",
+   "name": "keyword.operator.left_rotate.kbe",
    "match": "<<<"
   },
   "keyword.operator.right_rotate_equals": {
-   "name": "keyword.operator.right_rotate_equals.kay",
+   "name": "keyword.operator.right_rotate_equals.kbe",
    "match": ">>>="
   },
   "keyword.operator.right_rotate": {
-   "name": "keyword.operator.right_rotate.kay",
+   "name": "keyword.operator.right_rotate.kbe",
    "match": ">>>"
   },
   "keyword.operator.wrapping_left_shift_equals": {
-   "name": "keyword.operator.wrapping_left_shift_equals.kay",
+   "name": "keyword.operator.wrapping_left_shift_equals.kbe",
    "match": "<<\\\\="
   },
   "keyword.operator.saturating_left_shift_equals": {
-   "name": "keyword.operator.staturating_left_shift_equals.kay",
+   "name": "keyword.operator.staturating_left_shift_equals.kbe",
    "match": "<<\\|="
   },
   "keyword.operator.left_shift_equals": {
-   "name": "keyword.operator.left_shift_equals.kay",
+   "name": "keyword.operator.left_shift_equals.kbe",
    "match": "<<="
   },
   "keyword.operator.wrapping_left_shift": {
-   "name": "keyword.operator.wrapping_left_shift.kay",
+   "name": "keyword.operator.wrapping_left_shift.kbe",
    "match": "<<\\\\"
   },
   "keyword.operator.saturating_left_shift": {
-   "name": "keyword.operator.staturating_left_shift.kay",
+   "name": "keyword.operator.staturating_left_shift.kbe",
    "match": "<<\\|"
   },
   "keyword.operator.left_shift": {
-   "name": "keyword.operator.left_shift.kay",
+   "name": "keyword.operator.left_shift.kbe",
    "match": "<<"
   },
   "keyword.operator.right_shift_equals": {
-   "name": "keyword.operator.right_shift_equals.kay",
+   "name": "keyword.operator.right_shift_equals.kbe",
    "match": ">>="
   },
   "keyword.operator.right_shift": {
-   "name": "keyword.operator.right_shift.kay",
+   "name": "keyword.operator.right_shift.kbe",
    "match": ">>"
   },
   "keyword.operator.and_equals": {
-   "name": "keyword.operator.and_equals.kay",
+   "name": "keyword.operator.and_equals.kbe",
    "match": "&&="
   },
   "keyword.operator.and": {
-   "name": "keyword.operator.and.kay",
+   "name": "keyword.operator.and.kbe",
    "match": "&&"
   },
   "keyword.operator.or_equals": {
-   "name": "keyword.operator.or_equals.kay",
+   "name": "keyword.operator.or_equals.kbe",
    "match": "\\|\\|="
   },
   "keyword.operator.or": {
-   "name": "keyword.operator.or.kay",
+   "name": "keyword.operator.or.kbe",
    "match": "\\|\\|"
   },
   "keyword.operator.bit_and_equals": {
-   "name": "keyword.operator.bit_and_equals.kay",
+   "name": "keyword.operator.bit_and_equals.kbe",
    "match": "&="
   },
   "keyword.operator.bit_and": {
-   "name": "keyword.operator.bit_and.kay",
+   "name": "keyword.operator.bit_and.kbe",
    "match": "&"
   },
   "keyword.operator.bit_xor_equals": {
-   "name": "keyword.operator.bit_xor_equals.kay",
+   "name": "keyword.operator.bit_xor_equals.kbe",
    "match": "\\^="
   },
   "keyword.operator.bit_xor": {
-   "name": "keyword.operator.bit_xor.kay",
+   "name": "keyword.operator.bit_xor.kbe",
    "match": "\\^"
   },
   "keyword.operator.bit_or_equals": {
-   "name": "keyword.operator.bit_or_equals.kay",
+   "name": "keyword.operator.bit_or_equals.kbe",
    "match": "\\|="
   },
   "keyword.operator.bit_or": {
-   "name": "keyword.operator.bit_or.kay",
+   "name": "keyword.operator.bit_or.kbe",
    "match": "\\|"
   },
   "keyword.operator.compare": {
-   "name": "keyword.operator.compare.kay",
+   "name": "keyword.operator.compare.kbe",
    "match": "<=>"
   },
   "keyword.operator.greater_or_equals": {
-   "name": "keyword.operator.greater_or_equals.kay",
+   "name": "keyword.operator.greater_or_equals.kbe",
    "match": ">="
   },
   "keyword.operator.greater": {
-   "name": "keyword.operator.greater.kay",
+   "name": "keyword.operator.greater.kbe",
    "match": ">"
   },
   "keyword.operator.less_or_equals": {
-   "name": "keyword.operator.less_or_equals.kay",
+   "name": "keyword.operator.less_or_equals.kbe",
    "match": "<="
   },
   "keyword.operator.less": {
-   "name": "keyword.operator.less.kay",
+   "name": "keyword.operator.less.kbe",
    "match": "<"
   },
   "keyword.operator": {
@@ -441,27 +430,27 @@
   },
 
   "keyword.if": {
-   "name": "keyword.control.if.kay",
+   "name": "keyword.control.if.kbe",
    "match": "\\b(?:if)\\b"
   },
   "keyword.else": {
-   "name": "keyword.control.else.kay",
+   "name": "keyword.control.else.kbe",
    "match": "\\b(?:else)\\b"
   },
   "keyword.do": {
-   "name": "keyword.control.do.kay",
+   "name": "keyword.control.do.kbe",
    "match": "\\b(?:do)\\b"
   },
   "keyword.loop": {
-   "name": "keyword.control.loop.kay",
+   "name": "keyword.control.loop.kbe",
    "match": "\\b(?:loop)\\b"
   },
   "keyword.break": {
-   "name": "keyword.control.break.kay",
+   "name": "keyword.control.break.kbe",
    "match": "\\b(?:break)\\b"
   },
   "keyword.continue": {
-   "name": "keyword.control.continue.kay",
+   "name": "keyword.control.continue.kbe",
    "match": "\\b(?:continue)\\b"
   },
   "keyword.control_flow": {
@@ -476,11 +465,11 @@
   },
 
   "keyword.let": {
-   "name": "storage.modifier.let.kay",
+   "name": "storage.modifier.let.kbe",
    "match": "\\b(?:let)\\b"
   },
   "keyword.var": {
-   "name": "storage.modifier.var.kay",
+   "name": "storage.modifier.var.kbe",
    "match": "\\b(?:var)\\b"
   },
   "keyword.storage_modifier": {
@@ -490,192 +479,217 @@
    ]
   },
 
+  "keyword.builtin_print": {
+   "name": "support.function.builtin_print.kbe",
+   "match": "\\b(?:print)\\b"
+  },
+  "keyword.builtin_println": {
+   "name": "support.function.builtin_println.kbe",
+   "match": "\\b(?:println)\\b"
+  },
+  "keyword.builtin_eprint": {
+   "name": "support.function.builtin_eprint.kbe",
+   "match": "\\b(?:eprint)\\b"
+  },
+  "keyword.builtin_eprintln": {
+   "name": "support.function.builtin_eprintln.kbe",
+   "match": "\\b(?:eprintln)\\b"
+  },
+  "keyword.builtin_function": {
+   "patterns": [
+    { "include": "#keyword.builtin_print" },
+    { "include": "#keyword.builtin_println" },
+    { "include": "#keyword.builtin_eprint" },
+    { "include": "#keyword.builtin_eprintln" }
+   ]
+  },
   "keyword": {
    "patterns": [
     { "include": "#keyword.operator" },
     { "include": "#keyword.control_flow" },
-    { "include": "#keyword.storage_modifier" }
+    { "include": "#keyword.storage_modifier" },
+    { "include": "#keyword.builtin_function" }
    ]
   },
 
   "escape.backslash": {
-   "name": "constant.character.escape.backslash.kay",
+   "name": "constant.character.escape.backslash.kbe",
    "match": "\\\\{2}"
   },
   "escape.single_quote": {
-   "name": "constant.character.escape.single_quote.kay",
+   "name": "constant.character.escape.single_quote.kbe",
    "match": "\\\\'"
   },
   "escape.double_quote": {
-   "name": "constant.character.escape.double_quote.kay",
+   "name": "constant.character.escape.double_quote.kbe",
    "match": "\\\\\""
   },
   "escape.escape": {
-   "name": "constant.character.escape.escape.kay",
+   "name": "constant.character.escape.escape.kbe",
    "match": "\\\\e"
   },
   "escape.newline": {
-   "name": "constant.character.escape.newline.kay",
+   "name": "constant.character.escape.newline.kbe",
    "match": "\\\\n"
   },
   "escape.carriage_return": {
-   "name": "constant.character.escape.carriage_return.kay",
+   "name": "constant.character.escape.carriage_return.kbe",
    "match": "\\\\r"
   },
   "escape.tab": {
-   "name": "constant.character.escape.tab.kay",
+   "name": "constant.character.escape.tab.kbe",
    "match": "\\\\t"
   },
   "escape.null": {
-   "name": "constant.character.escape.null.kay",
+   "name": "constant.character.escape.null.kbe",
    "match": "\\\\0"
   },
   "escape.caret.NUL": {
-   "name": "constant.character.escape.caret.NUL.kay",
+   "name": "constant.character.escape.caret.NUL.kbe",
    "match": "\\\\\\^@"
   },
   "escape.caret.SOH": {
-   "name": "constant.character.escape.caret.SOH.kay",
+   "name": "constant.character.escape.caret.SOH.kbe",
    "match": "\\\\\\^A"
   },
   "escape.caret.STX": {
-   "name": "constant.character.escape.caret.STX.kay",
+   "name": "constant.character.escape.caret.STX.kbe",
    "match": "\\\\\\^B"
   },
   "escape.caret.ETX": {
-   "name": "constant.character.escape.caret.ETX.kay",
+   "name": "constant.character.escape.caret.ETX.kbe",
    "match": "\\\\\\^C"
   },
   "escape.caret.EOT": {
-   "name": "constant.character.escape.caret.EOT.kay",
+   "name": "constant.character.escape.caret.EOT.kbe",
    "match": "\\\\\\^D"
   },
   "escape.caret.ENQ": {
-   "name": "constant.character.escape.caret.ENQ.kay",
+   "name": "constant.character.escape.caret.ENQ.kbe",
    "match": "\\\\\\^E"
   },
   "escape.caret.ACK": {
-   "name": "constant.character.escape.caret.ACK.kay",
+   "name": "constant.character.escape.caret.ACK.kbe",
    "match": "\\\\\\^F"
   },
   "escape.caret.BEL": {
-   "name": "constant.character.escape.caret.BEL.kay",
+   "name": "constant.character.escape.caret.BEL.kbe",
    "match": "\\\\\\^G"
   },
   "escape.caret.BS": {
-   "name": "constant.character.escape.caret.BS.kay",
+   "name": "constant.character.escape.caret.BS.kbe",
    "match": "\\\\\\^H"
   },
   "escape.caret.HT": {
-   "name": "constant.character.escape.caret.HT.kay",
+   "name": "constant.character.escape.caret.HT.kbe",
    "match": "\\\\\\^I"
   },
   "escape.caret.LF": {
-   "name": "constant.character.escape.caret.LF.kay",
+   "name": "constant.character.escape.caret.LF.kbe",
    "match": "\\\\\\^J"
   },
   "escape.caret.VT": {
-   "name": "constant.character.escape.caret.VT.kay",
+   "name": "constant.character.escape.caret.VT.kbe",
    "match": "\\\\\\^K"
   },
   "escape.caret.FF": {
-   "name": "constant.character.escape.caret.FF.kay",
+   "name": "constant.character.escape.caret.FF.kbe",
    "match": "\\\\\\^L"
   },
   "escape.caret.CR": {
-   "name": "constant.character.escape.caret.CR.kay",
+   "name": "constant.character.escape.caret.CR.kbe",
    "match": "\\\\\\^M"
   },
   "escape.caret.SO": {
-   "name": "constant.character.escape.caret.SO.kay",
+   "name": "constant.character.escape.caret.SO.kbe",
    "match": "\\\\\\^N"
   },
   "escape.caret.SI": {
-   "name": "constant.character.escape.caret.SI.kay",
+   "name": "constant.character.escape.caret.SI.kbe",
    "match": "\\\\\\^O"
   },
   "escape.caret.DLE": {
-   "name": "constant.character.escape.caret.DLE.kay",
+   "name": "constant.character.escape.caret.DLE.kbe",
    "match": "\\\\\\^P"
   },
   "escape.caret.DC1": {
-   "name": "constant.character.escape.caret.DC1.kay",
+   "name": "constant.character.escape.caret.DC1.kbe",
    "match": "\\\\\\^Q"
   },
   "escape.caret.DC2": {
-   "name": "constant.character.escape.caret.DC2.kay",
+   "name": "constant.character.escape.caret.DC2.kbe",
    "match": "\\\\\\^R"
   },
   "escape.caret.DC3": {
-   "name": "constant.character.escape.caret.DC3.kay",
+   "name": "constant.character.escape.caret.DC3.kbe",
    "match": "\\\\\\^S"
   },
   "escape.caret.DC4": {
-   "name": "constant.character.escape.caret.DC4.kay",
+   "name": "constant.character.escape.caret.DC4.kbe",
    "match": "\\\\\\^T"
   },
   "escape.caret.NAK": {
-   "name": "constant.character.escape.caret.NAK.kay",
+   "name": "constant.character.escape.caret.NAK.kbe",
    "match": "\\\\\\^U"
   },
   "escape.caret.SYN": {
-   "name": "constant.character.escape.caret.SYN.kay",
+   "name": "constant.character.escape.caret.SYN.kbe",
    "match": "\\\\\\^V"
   },
   "escape.caret.ETB": {
-   "name": "constant.character.escape.caret.ETB.kay",
+   "name": "constant.character.escape.caret.ETB.kbe",
    "match": "\\\\\\^W"
   },
   "escape.caret.CAN": {
-   "name": "constant.character.escape.caret.CAN.kay",
+   "name": "constant.character.escape.caret.CAN.kbe",
    "match": "\\\\\\^X"
   },
   "escape.caret.EM": {
-   "name": "constant.character.escape.caret.EM.kay",
+   "name": "constant.character.escape.caret.EM.kbe",
    "match": "\\\\\\^Y"
   },
   "escape.caret.SUB": {
-   "name": "constant.character.escape.caret.SUB.kay",
+   "name": "constant.character.escape.caret.SUB.kbe",
    "match": "\\\\\\^Z"
   },
   "escape.caret.ESC": {
-   "name": "constant.character.escape.caret.ESC.kay",
+   "name": "constant.character.escape.caret.ESC.kbe",
    "match": "\\\\\\^\\["
   },
   "escape.caret.FS": {
-   "name": "constant.character.escape.caret.FS.kay",
+   "name": "constant.character.escape.caret.FS.kbe",
    "match": "\\\\\\^\\\\"
   },
   "escape.caret.GS": {
-   "name": "constant.character.escape.caret.GS.kay",
+   "name": "constant.character.escape.caret.GS.kbe",
    "match": "\\\\\\^\\]"
   },
   "escape.caret.RS": {
-   "name": "constant.character.escape.caret.RS.kay",
+   "name": "constant.character.escape.caret.RS.kbe",
    "match": "\\\\\\^\\^"
   },
   "escape.caret.US": {
-   "name": "constant.character.escape.caret.US.kay",
+   "name": "constant.character.escape.caret.US.kbe",
    "match": "\\\\\\^_"
   },
   "escape.caret.DEL": {
-   "name": "constant.character.escape.caret.DEL.kay",
+   "name": "constant.character.escape.caret.DEL.kbe",
    "match": "\\\\\\^\\?"
   },
   "escape.caret.unrecognized": {
-   "name": "constant.character.escape.caret.kay invalid.unrecognized.kay",
+   "name": "constant.character.escape.caret.kbe invalid.unrecognized.kbe",
    "match": "\\\\\\^[^\\r\\n]"
   },
   "escape.caret.unterminated": {
-   "name": "constant.character.escape.caret.kay invalid.unterminated.kay",
+   "name": "constant.character.escape.caret.kbe invalid.unterminated.kbe",
    "match": "\\\\\\^(?:[\\r\\n]|$)"
   },
   "escape.unrecognized": {
-   "name": "constant.character.escape.kay invalid.unrecognized.kay",
+   "name": "constant.character.escape.kbe invalid.unrecognized.kbe",
    "match": "\\\\[^^\\r\\n]"
   },
   "escape.unterminated": {
-   "name": "constant.character.escape.kay invalid.unterminated.kay",
+   "name": "constant.character.escape.kbe invalid.unterminated.kbe",
    "match": "\\\\(?:[\\r\\n]|$)"
   },
   "escape": {
@@ -729,11 +743,11 @@
   },
 
   "literal.true": {
-   "name": "constant.language.true.kay",
+   "name": "constant.language.true.kbe",
    "match": "\\b(?:true)\\b"
   },
   "literal.false": {
-   "name": "constant.language.false.kay",
+   "name": "constant.language.false.kbe",
    "match": "\\b(?:false)\\b"
   },
   "literal.boolean": {
@@ -744,11 +758,11 @@
   },
 
   "literal.character.empty": {
-   "name": "string.quoted.single.kay invalid.empty.kay",
+   "name": "string.quoted.single.kbe invalid.illegal.empty.kbe",
    "match": "''"
   },
   "literal.character.long": {
-   "name": "string.quoted.single.kay invalid.long.kay markup.underline.kay",
+   "name": "string.quoted.single.kbe invalid.illegal.long.kbe",
    "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n])){2,})'",
    "captures": {
     "1": {
@@ -760,7 +774,7 @@
    }
   },
   "literal.character.valid": {
-   "name": "string.quoted.single.kay",
+   "name": "string.quoted.single.kbe",
    "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n])))'",
    "captures": {
     "1": {
@@ -772,7 +786,7 @@
    }
   },
   "literal.character.unclosed": {
-   "name": "string.quoted.single.kay invalid.unclosed.kay",
+   "name": "string.quoted.single.kbe invalid.illegal.unclosed.kbe",
    "match": "'((?:[^\\\\'\\r\\n]|\\\\(?:\\^[^\\r\\n]?|[^^\\r\\n]))*)",
    "captures": {
     "1": {
@@ -793,7 +807,7 @@
   },
 
   "literal.string.valid": {
-   "name": "string.quoted.double.kay",
+   "name": "string.quoted.double.kbe",
    "match": "\"((?:[^\\\\\"\\r\\n]|\\\\(?:\\^[^\\r\\n]|[^^\\r\\n]))*)\"",
    "captures": {
     "1": {
@@ -805,7 +819,7 @@
    }
   },
   "literal.string.unclosed": {
-   "name": "string.quoted.double.kay invalid.unclosed.kay",
+   "name": "string.quoted.double.kbe invalid.unclosed.kbe",
    "match": "\"((?:[^\\\\\"\\r\\n]|\\\\(?:\\^[^\\r\\n]?|[^^\\r\\n]))*)",
    "captures": {
     "1": {
@@ -824,10 +838,10 @@
   },
 
   "literal.raw_string.valid": {
-   "name": "string.quoted.double.raw.kay",
+   "name": "string.quoted.double.raw.kbe",
    "match": "(r)\"((?:[^\\\\\"\\r\\n]|\\\\(?:(?!\")|\"))*)\"",
    "captures": {
-    "1": { "name": "markup.changed.prefix.kay" },
+    "1": { "name": "markup.changed.prefix.kbe" },
     "2": {
      "patterns": [
       { "include": "#escape.double_quote" },
@@ -837,10 +851,10 @@
    }
   },
   "literal.raw_string.unclosed": {
-   "name": "string.quoted.double.raw.kay invalid.unclosed.kay",
+   "name": "string.quoted.double.raw.kbe invalid.unclosed.kbe",
    "match": "(r)\"((?:[^\\\\\"\\r\\n]|\\\\(?:(?!\")|\"))*)",
    "captures": {
-    "1": { "name": "markup.changed.prefix.kay" },
+    "1": { "name": "markup.changed.prefix.kbe" },
     "2": {
      "patterns": [
       { "include": "#escape.double_quote" },
@@ -858,15 +872,15 @@
   },
 
   "literal.integer.binary": {
-   "name": "constant.numeric.integer.binary.kay",
+   "name": "constant.numeric.integer.binary.kbe",
    "match": "(0(b))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
-    "1": { "name": "constant.numeric.integer.prefix.kay" },
-    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "1": { "name": "constant.numeric.integer.prefix.kbe" },
+    "2": { "name": "constant.numeric.integer.base.kbe markup.changed.kbe" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.digit.kay",
+       "name": "invalid.digit.kbe",
        "match": "[2-9A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -875,15 +889,15 @@
    }
   },
   "literal.integer.octal": {
-   "name": "constant.numeric.integer.octal.kay",
+   "name": "constant.numeric.integer.octal.kbe",
    "match": "(0(o))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
-    "1": { "name": "constant.numeric.integer.prefix.kay" },
-    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "1": { "name": "constant.numeric.integer.prefix.kbe" },
+    "2": { "name": "constant.numeric.integer.base.kbe markup.changed.kbe" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.digit.kay",
+       "name": "invalid.digit.kbe",
        "match": "[8-9A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -892,15 +906,15 @@
    }
   },
   "literal.integer.hexadecimal": {
-   "name": "constant.numeric.integer.hexadecimal.kay",
+   "name": "constant.numeric.integer.hexadecimal.kbe",
    "match": "(0(x))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
-    "1": { "name": "constant.numeric.integer.prefix.kay" },
-    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "1": { "name": "constant.numeric.integer.prefix.kbe" },
+    "2": { "name": "constant.numeric.integer.base.kbe markup.changed.kbe" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.digit.kay",
+       "name": "invalid.digit.kbe",
        "match": "[G-Zg-z]"
       },
       { "include": "#non_ascii" }
@@ -909,15 +923,15 @@
    }
   },
   "literal.integer.decimal_prefix": {
-   "name": "constant.numeric.integer.decimal_prefix.kay",
+   "name": "constant.numeric.integer.decimal_prefix.kbe",
    "match": "(0(d))((?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
-    "1": { "name": "constant.numeric.integer.prefix.kay" },
-    "2": { "name": "constant.numeric.integer.base.kay markup.changed.kay" },
+    "1": { "name": "constant.numeric.integer.prefix.kbe" },
+    "2": { "name": "constant.numeric.integer.base.kbe markup.changed.kbe" },
     "3": {
      "patterns": [
       {
-       "name": "invalid.digit.kay",
+       "name": "invalid.digit.kbe",
        "match": "[A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -926,13 +940,13 @@
    }
   },
   "literal.integer.decimal": {
-   "name": "constant.numeric.integer.decimal.kay",
+   "name": "constant.numeric.integer.decimal.kbe",
    "match": "(\\d(?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": {
      "patterns": [
       {
-       "name": "invalid.digit.kay",
+       "name": "invalid.digit.kbe",
        "match": "[A-Za-z]"
       },
       { "include": "#non_ascii" }
@@ -960,44 +974,20 @@
    ]
   },
 
-  "identifier.builtin_print": {
-   "name": "support.function.builtin_print.kay",
-   "match": "\\b(?:print)\\b"
-  },
-  "identifier.builtin_println": {
-   "name": "support.function.builtin_println.kay",
-   "match": "\\b(?:println)\\b"
-  },
-  "identifier.builtin_eprint": {
-   "name": "support.function.builtin_eprint.kay",
-   "match": "\\b(?:eprint)\\b"
-  },
-  "identifier.builtin_eprintln": {
-   "name": "support.function.builtin_eprintln.kay",
-   "match": "\\b(?:eprintln)\\b"
-  },
-  "identifier.builtin_function": {
-   "patterns": [
-    { "include": "#identifier.builtin_print" },
-    { "include": "#identifier.builtin_println" },
-    { "include": "#identifier.builtin_eprint" },
-    { "include": "#identifier.builtin_eprintln" }
-   ]
-  },
   "identifier.builtin_i64": {
-   "name": "entity.name.type.i64.kay",
+   "name": "entity.name.type.i64.kbe",
    "match": "\\b(?:i64)\\b"
   },
   "identifier.builtin_ascii": {
-   "name": "entity.name.type.ascii.kay",
+   "name": "entity.name.type.ascii.kbe",
    "match": "\\b(?:ascii)\\b"
   },
   "identifier.builtin_bool": {
-   "name": "entity.name.type.bool.kay",
+   "name": "entity.name.type.bool.kbe",
    "match": "\\b(?:bool)\\b"
   },
   "identifier.builtin_str": {
-   "name": "entity.name.type.str.kay",
+   "name": "entity.name.type.str.kbe",
    "match": "\\b(?:str)\\b"
   },
   "identifier.builtin_type": {
@@ -1010,7 +1000,7 @@
   },
 
   "identifier.regular": {
-   "name": "variable.name.kay",
+   "name": "variable.name.kbe",
    "match": "([A-Za-z_](?:\\w|[^\\x00-\\x7f])*)",
    "captures": {
     "1": {
@@ -1021,7 +1011,7 @@
    }
   },
   "identifier.string.valid": {
-   "name": "string.quoted.other.kay variable.name.kay",
+   "name": "string.quoted.other.kbe variable.name.kbe",
    "match": "`([^`\\r\\n]*)`",
    "captures": {
     "1": {
@@ -1032,7 +1022,7 @@
    }
   },
   "identifier.string.unclosed": {
-   "name": "string.quoted.other.kay variable.name.kay invalid.unclosed.kay",
+   "name": "string.quoted.other.kbe variable.name.kbe invalid.unclosed.kbe",
    "match": "`([^`\\r\\n]*)",
    "captures": {
     "1": {
@@ -1045,7 +1035,6 @@
   "identifier": {
    "patterns": [
     { "include": "#identifier.builtin_type" },
-    { "include": "#identifier.builtin_function" },
     { "include": "#identifier.regular" },
     { "include": "#identifier.string.valid" },
     { "include": "#identifier.string.unclosed" }
